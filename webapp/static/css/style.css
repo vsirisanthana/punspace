@@ -37,7 +37,7 @@ article {
     width:470px;
 }
 
-.boton{
+.button{
     -webkit-box-shadow:rgba(255, 255, 255, 0.296875) 0 1px 0 inset, rgba(255, 255, 255, 0.296875) 0 0 2px inset, rgba(0, 0, 0, 0.289063) 0 1px 2px;
     background-attachment:initial;
     background-clip:initial;
@@ -71,6 +71,7 @@ article {
     font-variant:normal;
     font-weight:bold;
     line-height:20px;
+    margin-top:15px;
     padding-bottom:10px;
     padding-left:10px;
     padding-right:10px;
@@ -185,29 +186,12 @@ h2{
     margin:0 auto;
 }
 
-.input-email-bg {
-    width:321px;
-    height:42px;
-    background-image:url("images/input-email.gif");
-    background-repeat:no-repeat;
-    float:left;
-    margin-right:10px;
-}
-.input-email{
-    float:left;
-    height: 26px;
-    width: 303px;
-    padding:7px 0;
-    margin:1px 7px;
-    border:none;
-    font-size:20px;
-    text-align:center;
-    color:#ADADAD;
-    background:url("images/empty.gif");
+#input-email{
+    height: 38px;
 }
 .safe{
     float:left;
-    margin:3px 15px;
+    margin:5px 15px 5px 0;
     color:#6E6E6E;
     font-size:12px;
 }
