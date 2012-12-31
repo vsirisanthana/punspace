@@ -22,31 +22,93 @@ class BaseTestHandler(unittest2.TestCase):
         self.testbed.init_datastore_v3_stub(consistency_policy=self.policy)
         self.testbed.init_user_stub()
 
+        self.subscriber_adele_kwargs = {
+            'email': 'adele@punspace.com',
+            'first_name': 'Adele',
+            'last_name': 'Adkins',
+        }
+
+        self.subscriber_bono_kwargs = {
+            'email': 'bono@punspace.com',
+            'first_name': 'Bono',
+            'last_name': 'Hewson',
+        }
+
     def tearDown(self):
         self.testbed.deactivate()
+
+    def assertEqualSubscriberAdele(self, subscriber):
+        self.assertEqual(subscriber.email, 'adele@punspace.com')
+        self.assertEqual(subscriber.first_name, 'Adele')
+        self.assertEqual(subscriber.last_name, 'Adkins')
+
+    def assertEqualSubscriberAdeleDict(self, subscriber_dict):
+        self.assertEqual(subscriber_dict['email'], 'adele@punspace.com')
+        self.assertEqual(subscriber_dict['first_name'], 'Adele')
+        self.assertEqual(subscriber_dict['last_name'], 'Adkins')
+
+    def assertEqualSubscriberBono(self, subscriber):
+        self.assertEqual(subscriber.email, 'bono@punspace.com')
+        self.assertEqual(subscriber.first_name, 'Bono')
+        self.assertEqual(subscriber.last_name, 'Hewson')
+
+    def assertEqualSubscriberBonoDict(self, subscriber_dict):
+        self.assertEqual(subscriber_dict['email'], 'bono@punspace.com')
+        self.assertEqual(subscriber_dict['first_name'], 'Bono')
+        self.assertEqual(subscriber_dict['last_name'], 'Hewson')
+
+
+class TestSubscriberListHandler(BaseTestHandler):
+
+    def test_list_subscribers(self):
+        subscriber_adele = Subscriber(key_name=self.subscriber_adele_kwargs['email'], **self.subscriber_adele_kwargs)
+        subscriber_adele.put()
+        subscriber_bono = Subscriber(key_name=self.subscriber_bono_kwargs['email'], **self.subscriber_bono_kwargs)
+        subscriber_bono.put()
+
+        response = self.testapp.get('/api/subscribers')
+        self.assertEqual(response.status_int, 200)
+        self.assertEqual(response.content_type, 'application/json')
+
+        subscriber_dicts = json.loads(response.normal_body)
+        self.assertEqual(len(subscriber_dicts), 2)
+        self.assertEqualSubscriberAdeleDict(subscriber_dicts[0])
+        self.assertEqualSubscriberBonoDict(subscriber_dicts[1])
+
+    def test_list_subscribers__no_subscribers(self):
+        response = self.testapp.get('/api/subscribers')
+        self.assertEqual(response.status_int, 200)
+        self.assertEqual(response.content_type, 'application/json')
+
+        subscriber_dicts = json.loads(response.normal_body)
+        self.assertEqual(subscriber_dicts, [])
+
+    def test_list_subscribers__one_subscriber(self):
+        subscriber_adele = Subscriber(key_name=self.subscriber_adele_kwargs['email'], **self.subscriber_adele_kwargs)
+        subscriber_adele.put()
+
+        response = self.testapp.get('/api/subscribers')
+        self.assertEqual(response.status_int, 200)
+        self.assertEqual(response.content_type, 'application/json')
+
+        subscriber_dicts = json.loads(response.normal_body)
+        self.assertEqual(len(subscriber_dicts), 1)
+        self.assertEqualSubscriberAdeleDict(subscriber_dicts[0])
 
 
 class TestSubscriberCreateHandler(BaseTestHandler):
 
     def test_create_subscriber(self):
-        response = self.testapp.post_json('/api/subscribers', {
-            'email': 'adele@punspace.com',
-            'first_name': 'Adele',
-            'last_name': 'Adkins',
-        })
+        response = self.testapp.post_json('/api/subscribers', self.subscriber_adele_kwargs)
         self.assertEqual(response.status_int, 201)
         self.assertEqual(response.content_type, 'application/json')
 
         subscriber_dict = json.loads(response.normal_body)
-        self.assertEqual(subscriber_dict['email'], 'adele@punspace.com')
-        self.assertEqual(subscriber_dict['first_name'], 'Adele')
-        self.assertEqual(subscriber_dict['last_name'], 'Adkins')
+        self.assertEqualSubscriberAdeleDict(subscriber_dict)
 
         self.assertEqual(Subscriber.all().count(), 1)
         subscriber = Subscriber.get_by_key_name('adele@punspace.com')
-        self.assertEqual(subscriber.email, 'adele@punspace.com')
-        self.assertEqual(subscriber.first_name, 'Adele')
-        self.assertEqual(subscriber.last_name, 'Adkins')
+        self.assertEqualSubscriberAdele(subscriber)
 
     def test_create_subscriber__only_email(self):
         response = self.testapp.post_json('/api/subscribers', {
@@ -91,21 +153,13 @@ class TestSubscriberCreateHandler(BaseTestHandler):
         )
         subscriber.put()
 
-        response = self.testapp.post_json('/api/subscribers', {
-            'email': 'adele@punspace.com',
-            'first_name': 'Adele',
-            'last_name': 'Adkins',
-        })
+        response = self.testapp.post_json('/api/subscribers', self.subscriber_adele_kwargs)
         self.assertEqual(response.status_int, 201)
         self.assertEqual(response.content_type, 'application/json')
 
         subscriber_dict = json.loads(response.normal_body)
-        self.assertEqual(subscriber_dict['email'], 'adele@punspace.com')
-        self.assertEqual(subscriber_dict['first_name'], 'Adele')
-        self.assertEqual(subscriber_dict['last_name'], 'Adkins')
+        self.assertEqualSubscriberAdeleDict(subscriber_dict)
 
         self.assertEqual(Subscriber.all().count(), 1)
         subscriber = Subscriber.get_by_key_name('adele@punspace.com')
-        self.assertEqual(subscriber.email, 'adele@punspace.com')
-        self.assertEqual(subscriber.first_name, 'Adele')
-        self.assertEqual(subscriber.last_name, 'Adkins')
+        self.assertEqualSubscriberAdele(subscriber)

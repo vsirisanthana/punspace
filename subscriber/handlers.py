@@ -5,12 +5,12 @@ import re
 
 from gaevalidate import clean
 from serene.errors import Http4xx
-from serene.handlers import CreateHandler
+from serene.handlers import ListOrCreateHandler
 
 from subscriber.models import Subscriber
 
 
-class SubscriberCreateHandler(CreateHandler):
+class SubscriberListOrCreateHandler(ListOrCreateHandler):
     model = Subscriber
 
     def do_post(self, parent_key=None, **kwargs):
