@@ -3,6 +3,8 @@ __author__ = 'pique'
 
 import re
 
+from google.appengine.api import mail
+
 from gaevalidate import clean
 from serene.errors import Http4xx
 from serene.handlers import ListOrCreateHandler
@@ -22,4 +24,11 @@ class SubscriberListOrCreateHandler(ListOrCreateHandler):
             raise Http4xx(400, 'Error 400 Bad Request: Email is invalid.')
         subscriber = Subscriber(key_name=email, **content)
         subscriber.put()
+
+        # Send email
+        sender_address = 'Pique Sirisanthana <pique@punspace.com>'
+        subject = 'Thank You for Subscribing to Pun Space'
+        body = """Thank you for subscribing to Pun Space. We'll get in touch with you very soon."""
+        mail.send_mail(sender_address, email, subject, body)
+
         return subscriber
