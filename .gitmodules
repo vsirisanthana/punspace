@@ -4,3 +4,6 @@
 [submodule "appenginevalidation"]
 	path = appenginevalidation
 	url = git@github.com:vsirisanthana/appenginevalidation.git
+[submodule "appengineserene"]
+	path = appengineserene
+	url = git@github.com:vsirisanthana/appengineserene.git
