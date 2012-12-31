@@ -1,0 +1,3 @@
+[submodule "appenginejson"]
+	path = appenginejson
+	url = git@github.com:vsirisanthana/appenginejson.git
