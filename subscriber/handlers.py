@@ -5,7 +5,7 @@ import re
 
 from google.appengine.api import mail
 
-from gaevalidate import clean
+from appenginevalidation import clean
 from serene.errors import Http4xx
 from serene.handlers import ListOrCreateHandler
 
