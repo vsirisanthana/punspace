@@ -20,4 +20,6 @@ class SubscriberCreateHandler(CreateHandler):
             raise Http4xx(400, 'Error 400 Bad Request: Email is required.')
         if not re.match(r'[^@]+@[^@]+\.[^@]+', email):
             raise Http4xx(400, 'Error 400 Bad Request: Email is invalid.')
-        return Subscriber.get_or_insert(email, **content)
+        subscriber = Subscriber(key_name=email, **content)
+        subscriber.put()
+        return subscriber

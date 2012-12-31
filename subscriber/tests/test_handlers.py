@@ -42,6 +42,7 @@ class TestSubscriberCreateHandler(BaseTestHandler):
         self.assertEqual(subscriber_dict['first_name'], 'Adele')
         self.assertEqual(subscriber_dict['last_name'], 'Adkins')
 
+        self.assertEqual(Subscriber.all().count(), 1)
         subscriber = Subscriber.get(subscriber_dict['key'])
         self.assertEqual(subscriber.email, 'adele@punspace.com')
         self.assertEqual(subscriber.first_name, 'Adele')
@@ -59,6 +60,7 @@ class TestSubscriberCreateHandler(BaseTestHandler):
         self.assertEqual(subscriber_dict['first_name'], None)
         self.assertEqual(subscriber_dict['last_name'], None)
 
+        self.assertEqual(Subscriber.all().count(), 1)
         subscriber = Subscriber.get(subscriber_dict['key'])
         self.assertEqual(subscriber.email, 'adele@punspace.com')
         self.assertEqual(subscriber.first_name, None)
@@ -69,6 +71,7 @@ class TestSubscriberCreateHandler(BaseTestHandler):
         self.assertEqual(response.status_int, 400)
         self.assertEqual(response.content_type, 'application/json')
         self.assertEqual(json.loads(response.normal_body), 'Error 400 Bad Request: Email is required.')
+        self.assertEqual(Subscriber.all().count(), 0)
 
     def test_create_subscriber__invalid_email(self):
         response = self.testapp.post_json('/api/subscribers', {
@@ -77,3 +80,32 @@ class TestSubscriberCreateHandler(BaseTestHandler):
         self.assertEqual(response.status_int, 400)
         self.assertEqual(response.content_type, 'application/json')
         self.assertEqual(json.loads(response.normal_body), 'Error 400 Bad Request: Email is invalid.')
+        self.assertEqual(Subscriber.all().count(), 0)
+
+    def test_create_subscriber__overwrite_subscriber(self):
+        subscriber = Subscriber(
+            key_name='adele@punspace.com',
+            email='adele@punspace.com',
+            first_name='',
+            last_name='',
+        )
+        subscriber.put()
+
+        response = self.testapp.post_json('/api/subscribers', {
+            'email': 'adele@punspace.com',
+            'first_name': 'Adele',
+            'last_name': 'Adkins',
+        })
+        self.assertEqual(response.status_int, 201)
+        self.assertEqual(response.content_type, 'application/json')
+
+        subscriber_dict = json.loads(response.normal_body)
+        self.assertEqual(subscriber_dict['email'], 'adele@punspace.com')
+        self.assertEqual(subscriber_dict['first_name'], 'Adele')
+        self.assertEqual(subscriber_dict['last_name'], 'Adkins')
+
+        self.assertEqual(Subscriber.all().count(), 1)
+        subscriber = Subscriber.get(subscriber_dict['key'])
+        self.assertEqual(subscriber.email, 'adele@punspace.com')
+        self.assertEqual(subscriber.first_name, 'Adele')
+        self.assertEqual(subscriber.last_name, 'Adkins')
