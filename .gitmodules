@@ -1,3 +1,6 @@
 [submodule "appenginejson"]
 	path = appenginejson
 	url = git@github.com:vsirisanthana/appenginejson.git
+[submodule "appenginevalidation"]
+	path = appenginevalidation
+	url = git@github.com:vsirisanthana/appenginevalidation.git
