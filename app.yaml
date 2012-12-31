@@ -5,6 +5,9 @@ api_version: 1
 threadsafe: yes
 
 handlers:
+- url: /api/subscribers/?
+  script: api.urls.app
+
 - url: /favicon\.ico
   static_files: favicon.ico
   upload: favicon\.ico
