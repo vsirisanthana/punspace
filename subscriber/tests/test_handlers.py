@@ -43,7 +43,7 @@ class TestSubscriberCreateHandler(BaseTestHandler):
         self.assertEqual(subscriber_dict['last_name'], 'Adkins')
 
         self.assertEqual(Subscriber.all().count(), 1)
-        subscriber = Subscriber.get(subscriber_dict['key'])
+        subscriber = Subscriber.get_by_key_name('adele@punspace.com')
         self.assertEqual(subscriber.email, 'adele@punspace.com')
         self.assertEqual(subscriber.first_name, 'Adele')
         self.assertEqual(subscriber.last_name, 'Adkins')
@@ -61,7 +61,7 @@ class TestSubscriberCreateHandler(BaseTestHandler):
         self.assertEqual(subscriber_dict['last_name'], None)
 
         self.assertEqual(Subscriber.all().count(), 1)
-        subscriber = Subscriber.get(subscriber_dict['key'])
+        subscriber = Subscriber.get_by_key_name('adele@punspace.com')
         self.assertEqual(subscriber.email, 'adele@punspace.com')
         self.assertEqual(subscriber.first_name, None)
         self.assertEqual(subscriber.last_name, None)
@@ -105,7 +105,7 @@ class TestSubscriberCreateHandler(BaseTestHandler):
         self.assertEqual(subscriber_dict['last_name'], 'Adkins')
 
         self.assertEqual(Subscriber.all().count(), 1)
-        subscriber = Subscriber.get(subscriber_dict['key'])
+        subscriber = Subscriber.get_by_key_name('adele@punspace.com')
         self.assertEqual(subscriber.email, 'adele@punspace.com')
         self.assertEqual(subscriber.first_name, 'Adele')
         self.assertEqual(subscriber.last_name, 'Adkins')
