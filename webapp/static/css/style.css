@@ -127,6 +127,7 @@ article {
 
 a, a:visited{
     color:#29B1BF;
+    text-decoration: none;
 }
 a:hover{
     color: #444243;
@@ -233,13 +234,6 @@ h2{
     text-align:center;
 }
 
-.myinfo{
-    float:left;
-    width:0px;
-    height:0px;
-    visibility:hidden;
-}
-
 .contact-us, .about-us{
     width:400px;
     font-size:12px;
@@ -268,4 +262,12 @@ form{
     background-color:#C0FFB2;
     padding:0 2px;
     margin-bottom:10px;
+}
+
+#sociallinks{
+    padding-left: 100px;
+}
+.icon{
+    margin-right:30px;
+    border:none;
 }
