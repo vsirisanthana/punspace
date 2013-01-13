@@ -75,13 +75,21 @@ body {
     letter-spacing: 3px;
 }
 
+section {
+    padding: 20px 0;
+}
+
 h1 {
     font-family: 'SubtleSansLight';
     letter-spacing: 10px;
 }
 
-section {
-    padding: 20px 0;
+ul {
+    list-style: none;
+}
+
+li {
+
 }
 
 .logotype {
@@ -109,6 +117,28 @@ section {
 
 .spacer {
     height: 100px;
+}
+
+.facility-list {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.facility {
+    font-size: 20px;
+    letter-spacing: 5px;
+    line-height: 30px;
+    text-transform: uppercase;
+}
+
+.facility.large {
+    font-size: 36px;
+    letter-spacing: 5px;
+    line-height: 36px;
+}
+
+.rigg {
+    text-align: right;
 }
 
 .price-plan {
