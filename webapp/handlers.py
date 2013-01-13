@@ -11,6 +11,7 @@ jinja_environment = jinja2.Environment(
 
 class AppHandler(webapp2.RequestHandler):
 
-    def get(self):
-        template = jinja_environment.get_template('comingsoon.html')
+    def get(self, name):
+        name = name if name else 'comingsoon.html'
+        template = jinja_environment.get_template(name)
         self.response.out.write(template.render())

@@ -1,0 +1,188 @@
+@font-face {
+    font-family: 'SubtleSansRegular';
+    src: url('/static/font/subtlesans/subtlesansregular.eot');
+    src: url('/static/font/subtlesans/subtlesansregular.eot') format('embedded-opentype'), url('/static/font/subtlesans/subtlesansregular.woff') format('woff'), url('/static/font/subtlesans/subtlesansregular.ttf') format('truetype'), url('/static/font/subtlesans/subtlesansregular.svg#subtlesansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SubtleSansLight';
+    src: url('/static/font/subtlesans/subtlesanslight.eot');
+    src: url('/static/font/subtlesans/subtlesanslight.eot') format('embedded-opentype'), url('/static/font/subtlesans/subtlesanslight.woff') format('woff'), url('/static/font/subtlesans/subtlesanslight.ttf') format('truetype'), url('/static/font/subtlesans/subtlesanslight.svg#subtlesanslight') format('svg');
+}
+
+@font-face {
+    font-family: 'SubtleSansUltraLight';
+    src: url('/static/font/subtlesans/subtlesansultralight.eot');
+    src: url('/static/font/subtlesans/subtlesansultralight.eot') format('embedded-opentype'), url('/static/font/subtlesans/subtlesansultralight.woff') format('woff'), url('/static/font/subtlesans/subtlesansultralight.ttf') format('truetype'), url('/static/font/subtlesans/subtlesansultralight.svg#subtlesansultralight') format('svg');
+}
+
+.subtlesansregular {
+    font-family: 'SubtleSansRegular';
+}
+
+.subtlesanslight {
+    font-family: 'SubtleSansLight';
+}
+
+.subtlesansultralight {
+    font-family: 'SubtleSansUltraLight';
+}
+
+.orange {
+    color: #f15b41;
+}
+
+.green {
+    color: #00b59c;
+}
+
+.yellow {
+    color: #febe14;
+}
+
+.grey {
+    color: #828487;
+}
+
+.white {
+    color: white;
+}
+
+.background-orange {
+    background-color: #f15b41;
+}
+
+.background-green {
+    background-color: #00b59c;
+}
+
+.background-yellow {
+    background-color: #febe14;
+}
+
+.background-grey {
+    background-color: #828487;
+}
+
+.background-white {
+    background-color: white;
+}
+
+body {
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+h1 {
+    font-family: 'SubtleSansLight';
+    letter-spacing: 10px;
+}
+
+section {
+    padding: 20px 0;
+}
+
+.logotype {
+    font-family: 'SubtleSansLight';
+    font-weight: normal;
+    font-size: 200px;
+    letter-spacing: 30px;
+    line-height: 180px;
+    margin-left: -8px;
+}
+
+.brandline {
+    letter-spacing: 15px;
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+.tagline {
+    font-family: 'SubtleSansLight';
+    font-size: 40px;
+    font-weight: lighter;
+    letter-spacing: 15px;
+    line-height: 30px;
+}
+
+.spacer {
+    height: 100px;
+}
+
+.price-plan {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+}
+
+.price-label {
+    font-size: 20px;
+    letter-spacing: 5px;
+    line-height: 30px;
+    text-transform: uppercase;
+}
+
+.price-spacer {
+    height: 20px;
+}
+
+.price {
+    font-size: 36px;
+    letter-spacing: 5px;
+    line-height: 32px;
+}
+
+#map_canvas {
+    height: 500px;
+}
+
+.ribbon {
+    font-size: 16px !important;
+    /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
+
+    width: 50%;
+
+    position: relative;
+    background: #ba89b6;
+    color: #fff;
+    text-align: center;
+    padding: 1em 2em; /* Adjust to suit */
+    margin: 2em auto 3em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+}
+.ribbon:before, .ribbon:after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: -1em;
+    border: 1.5em solid #986794;
+    z-index: -1;
+}
+.ribbon:before {
+    left: -2em;
+    border-right-width: 1.5em;
+    border-left-color: transparent;
+}
+.ribbon:after {
+    right: -2em;
+    border-left-width: 1.5em;
+    border-right-color: transparent;
+}
+.ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
+    content: "";
+    position: absolute;
+    display: block;
+    border-style: solid;
+    border-color: #804f7c transparent transparent transparent;
+    bottom: -1em;
+}
+.ribbon .ribbon-content:before {
+    left: 0;
+    border-width: 1em 0 0 1em;
+}
+.ribbon .ribbon-content:after {
+    right: 0;
+    border-width: 1em 1em 0 0;
+}
