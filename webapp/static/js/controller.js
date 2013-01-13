@@ -14,7 +14,7 @@ function AppCtrl($scope) {
     $scope.marker = new google.maps.Marker({
         position: $scope.latLng,
         title: 'Pun Space',
-        icon: '/static/images/apple-touch-icon-57x57-precomposed.png'
+        icon: '/static/images/map_marker.png'
     });
     $scope.marker.setMap($scope.map);
     $scope.marker.setAnimation(google.maps.Animation.BOUNCE);
