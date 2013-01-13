@@ -21,6 +21,8 @@ class BaseTestHandler(unittest2.TestCase):
         self.policy = datastore_stub_util.PseudoRandomHRConsistencyPolicy(probability=1)
         self.testbed.init_datastore_v3_stub(consistency_policy=self.policy)
         self.testbed.init_user_stub()
+        self.testbed.init_mail_stub()
+        self.mail_stub = self.testbed.get_stub(testbed.MAIL_SERVICE_NAME)
 
         self.subscriber_adele_kwargs = {
             'email': 'adele@punspace.com',
@@ -56,6 +58,11 @@ class BaseTestHandler(unittest2.TestCase):
         self.assertEqual(subscriber_dict['email'], 'bono@punspace.com')
         self.assertEqual(subscriber_dict['first_name'], 'Bono')
         self.assertEqual(subscriber_dict['last_name'], 'Hewson')
+
+    def assertEqualMessageSubscribe(self, message):
+        self.assertEqual(message.to, 'adele@punspace.com')
+        self.assertEqual(message.sender, 'Pique Sirisanthana <pique@punspace.com>')
+        self.assertEqual(message.subject, 'Thank You for Subscribing to Pun Space')
 
 
 class TestSubscriberListHandler(BaseTestHandler):
@@ -110,6 +117,10 @@ class TestSubscriberCreateHandler(BaseTestHandler):
         subscriber = Subscriber.get_by_key_name('adele@punspace.com')
         self.assertEqualSubscriberAdele(subscriber)
 
+        messages = self.mail_stub.get_sent_messages(to='adele@punspace.com')
+        self.assertEqual(1, len(messages))
+        self.assertEqualMessageSubscribe(messages[0])
+
     def test_create_subscriber__only_email(self):
         response = self.testapp.post_json('/api/subscribers', {
             'email': 'adele@punspace.com',
@@ -127,6 +138,10 @@ class TestSubscriberCreateHandler(BaseTestHandler):
         self.assertEqual(subscriber.email, 'adele@punspace.com')
         self.assertEqual(subscriber.first_name, None)
         self.assertEqual(subscriber.last_name, None)
+
+        messages = self.mail_stub.get_sent_messages(to='adele@punspace.com')
+        self.assertEqual(1, len(messages))
+        self.assertEqualMessageSubscribe(messages[0])
 
     def test_create_subscriber__no_email(self):
         response = self.testapp.post_json('/api/subscribers', {}, status=400)
@@ -163,3 +178,7 @@ class TestSubscriberCreateHandler(BaseTestHandler):
         self.assertEqual(Subscriber.all().count(), 1)
         subscriber = Subscriber.get_by_key_name('adele@punspace.com')
         self.assertEqualSubscriberAdele(subscriber)
+
+        messages = self.mail_stub.get_sent_messages(to='adele@punspace.com')
+        self.assertEqual(1, len(messages))
+        self.assertEqualMessageSubscribe(messages[0])
