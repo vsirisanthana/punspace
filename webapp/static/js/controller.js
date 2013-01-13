@@ -13,7 +13,16 @@ function AppCtrl($scope) {
     });
     $scope.marker = new google.maps.Marker({
         position: $scope.latLng,
-        title: 'Pun Space'
+        title: 'Pun Space',
+        icon: '/static/images/apple-touch-icon-57x57-precomposed.png'
     });
     $scope.marker.setMap($scope.map);
+    $scope.marker.setAnimation(google.maps.Animation.BOUNCE);
+    google.maps.event.addListener($scope.marker, 'mouseover', function() {
+        $scope.marker.setAnimation(null);
+    });
+
+    google.maps.event.addListener($scope.marker, 'mouseout', function() {
+        $scope.marker.setAnimation(google.maps.Animation.BOUNCE);
+    });
 }
