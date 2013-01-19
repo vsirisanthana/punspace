@@ -12,6 +12,6 @@ jinja_environment = jinja2.Environment(
 class AppHandler(webapp2.RequestHandler):
 
     def get(self, name):
-        name = name if name else 'comingsoon.html'
+        name = name if name else 'infographic2.html'
         template = jinja_environment.get_template(name)
         self.response.out.write(template.render())
