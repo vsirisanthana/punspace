@@ -17,12 +17,12 @@ function AppCtrl($scope) {
         icon: '/static/images/map_marker.png'
     });
     $scope.marker.setMap($scope.map);
-    $scope.marker.setAnimation(google.maps.Animation.BOUNCE);
-    google.maps.event.addListener($scope.marker, 'mouseover', function() {
-        $scope.marker.setAnimation(null);
-    });
-
-    google.maps.event.addListener($scope.marker, 'mouseout', function() {
-        $scope.marker.setAnimation(google.maps.Animation.BOUNCE);
-    });
+//    $scope.marker.setAnimation(google.maps.Animation.BOUNCE);
+//    google.maps.event.addListener($scope.marker, 'mouseover', function() {
+//        $scope.marker.setAnimation(null);
+//    });
+//
+//    google.maps.event.addListener($scope.marker, 'mouseout', function() {
+//        $scope.marker.setAnimation(google.maps.Animation.BOUNCE);
+//    });
 }
