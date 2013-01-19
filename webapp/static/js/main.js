@@ -5,4 +5,9 @@ $(function() {
        console.log('done sending');
 
     })
+    var deck = new $.scrolldeck({
+        slides: '.slide',
+        buttons: '.nav-button',
+        easing: 'easeInOutExpo'
+    });
 });

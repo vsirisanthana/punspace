@@ -95,15 +95,15 @@ li {
 .logotype {
     font-family: 'SubtleSansLight';
     font-weight: normal;
-    font-size: 200px;
+    font-size: 150px;
     letter-spacing: 30px;
-    line-height: 180px;
+    line-height: 150px;
     margin-left: -8px;
 }
 
 .brandline {
-    letter-spacing: 15px;
-    font-size: 20px;
+    letter-spacing: 11px;
+    font-size: 18px;
     font-weight: lighter;
 }
 
@@ -117,6 +117,10 @@ li {
 
 .spacer {
     height: 100px;
+}
+
+.small-spacer {
+    height: 40px;
 }
 
 .facility-list {
@@ -216,3 +220,53 @@ li {
     right: 0;
     border-width: 1em 1em 0 0;
 }
+
+.slide {
+    margin: 0 auto;
+    width: 99%;
+    padding: 15px 0;
+    padding: 8rem 0;
+    height: 35rem;
+}
+
+#facilities3 .slide{
+    padding: 15px 0;
+    padding: 8rem 0;
+    height: 45rem;
+}
+
+article {
+    background-color:rgba(255, 255, 255, 0.8);
+    border-bottom-left-radius:15px;
+    border-bottom-right-radius:15px;
+    border-top-left-radius:15px;
+    border-top-right-radius:15px;
+    float:right;
+    overflow-x:hidden;
+    overflow-y:hidden;
+    padding-bottom:25px;
+    padding-left:30px;
+    padding-right:30px;
+    padding-top:25px;
+    position:relative;
+    text-align:left;
+    width:350px;
+}
+
+#sociallinks{
+    padding-left: 30px;
+    text-align: center;
+}
+.icon{
+    border:none;
+    margin-right:30px;
+}
+
+.safe{
+    float:left;
+    margin:5px 15px 5px 0;
+    color:#6E6E6E;
+    font-size:12px;
+    letter-spacing: 2px;
+}
+
