@@ -284,3 +284,46 @@ article {
 .center {
     text-align: center;
 }
+
+@font-face {
+    font-family: 'icomoon';
+    src:url('/static/font/icomoon/icomoon.eot');
+    src:url('/static/font/icomoon/icomoon.eot?#iefix') format('embedded-opentype'),
+    url('/static/font/icomoon/icomoon.svg#icomoon') format('svg'),
+    url('/static/font/icomoon/icomoon.woff') format('woff'),
+    url('/static/font/icomoon/icomoon.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+    font-family: 'icomoon';
+    content: attr(data-icon);
+    speak: none;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"]:before {
+*/
+.icon-Logo-Icon:before {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+.icon-Logo-Icon:before {
+    content: "\50";
+}
+
+.logoicon {
+    font-size: 10rem;
+}
