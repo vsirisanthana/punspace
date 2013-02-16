@@ -7,6 +7,40 @@ function AppCtrl($scope) {
     $scope.r = Math.pow(3, -1/2);
     $scope.s = 1/5;
 
+    $scope.prices = {
+        member: {
+            daily: 199,
+            weekly: 999,
+            monthly: 3499,
+            quarterly: 8999,
+            'half-yearly': 15999,
+            yearly: 27999
+        },
+        'add-on': {
+            'small-office': {
+                weekly: 899,
+                monthly: 3149,
+                quarterly: 8399,
+                'half-yearly': 14999,
+                yearly: 26999
+            },
+            'large-office': {
+                weekly: 1199,
+                monthly: 4199,
+                quarterly: 11199,
+                'half-yearly': 19999,
+                yearly: 35999
+            },
+            'locker': {
+                weekly: 69,
+                monthly: 279,
+                quarterly: 749,
+                'half-yearly': 'free',
+                yearly: 'free'
+            }
+        }
+    };
+
     // Google Maps
     $scope.latLng = new google.maps.LatLng(18.793589, 98.972349);
     $scope.map = new google.maps.Map(document.getElementById('map_canvas'), {

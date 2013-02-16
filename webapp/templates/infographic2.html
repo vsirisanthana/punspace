@@ -24,6 +24,13 @@
 
 <section id="hero" class="background-orange slide">
   <div class="container">
+    <div class="row">
+      <div class="span12 background-yellow notifications">
+        <h3 class="grey">Membership and Private Office Pricing Annoucement!</h3>
+        <p class="grey">Click <a href="#pricing">here</a> for pricing information. Reserve your private office today
+          by emailing your request to <a href="mailto:contact@punspace.com?Subject=Inquiry">contact@punspace.com</a> or call 089-851-1551.</p>
+      </div>
+    </div>
       <div class="row">
           <div class="span7">
               <!--<div class="logoicon center" aria-hidden="true" data-icon="P"></div>-->
@@ -31,6 +38,7 @@
                   <span class="subtlesansregular">PUN</span><br/><span class="subtlesanslight">SPACE</span>
               </h1>
               <h2 class="brandline">COWORKING CHIANG MAI</h2>
+              <h3 class="subbrandline">COMING MARCH 1ST</h3>
               <div class="spacer"></div>
           </div>
           <div class="span5 grey">
@@ -70,9 +78,9 @@
           </div>
       </div>
       <div class="row">
-          <div class="small-spacer"></div>
+          <!--<div class="small-spacer"></div>-->
           <div class="span12">
-              <div class="tagline">COMING MARCH 2013</div>
+              <!--<div class="tagline">COMING MARCH 2013</div>-->
               <div class="center yellow">Scroll down for more info</div>
               <div class="arrow-down"></div>
           </div>
@@ -159,36 +167,163 @@
   </div>
 </section>
 
+<!--<section id="pricing-old" class="background-green slide">-->
+  <!--<div class="container">-->
+    <!--<h1>Pricing <span class="yellow">(Suggested prices*)</span></h1>-->
+    <!--<div class="row">-->
+      <!--<div class="span4">-->
+        <!--<div class="price-plan">-->
+          <!--<div class="price-label">Daily</div>-->
+          <!--<div class="price-spacer"></div>-->
+          <!--<div class="price">&#3647;199</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="span4">-->
+        <!--<div class="price-plan">-->
+          <!--<div class="price-label">Weekly</div>-->
+          <!--<div class="price-spacer"></div>-->
+          <!--<div class="price">&#3647;999</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="span4">-->
+        <!--<div class="price-plan">-->
+          <!--<div class="price-label">Monthly</div>-->
+          <!--<div class="price-spacer"></div>-->
+          <!--<div class="price">&#3647;3,499</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="row">-->
+      <!--<div class="span12">-->
+        <!--<div class="spacer"></div>-->
+        <!--<p class="footnote">*These are suggested prices. Final prices may vary. We reserve the right to change our prices without prior notice.</p>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</section>-->
+
 <section id="pricing" class="background-green slide">
   <div class="container">
-    <h1>Pricing <span class="yellow">(Suggested prices*)</span></h1>
-    <div class="row">
-      <div class="span4">
-        <div class="price-plan">
-          <div class="price-label">Daily</div>
-          <div class="price-spacer"></div>
-          <div class="price">&#3647;199</div>
-        </div>
-      </div>
-      <div class="span4">
-        <div class="price-plan">
-          <div class="price-label">Weekly</div>
-          <div class="price-spacer"></div>
-          <div class="price">&#3647;999</div>
-        </div>
-      </div>
-      <div class="span4">
-        <div class="price-plan">
-          <div class="price-label">Monthly</div>
-          <div class="price-spacer"></div>
-          <div class="price">&#3647;3,499</div>
-        </div>
-      </div>
-    </div>
+    <h1>Pricing</h1>
+    <table class="price-table table table-bordered">
+      <thead>
+        <tr>
+          <th class="table-header" rowspan="3"></th>
+          <th class="table-header" rowspan="2" colspan="2">Membership</th>
+          <th class="table-header" colspan="5">Add-On</th>
+        </tr>
+        <tr>
+          <th class="table-header" colspan="2">Small Office*</th>
+          <th class="table-header" colspan="2">Large Office**</th>
+          <th class="table-header" rowspan="2">Locker</th>
+        </tr>
+        <tr>
+          <th class="table-header">Regular</th>
+          <th class="table-header yellow">10% Off***</th>
+          <th class="table-header">Regular</th>
+          <th class="table-header yellow">10% Off***</th>
+          <th class="table-header">Regular</th>
+          <th class="table-header yellow">10% Off***</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="price-package">Daily</td>
+          <td class="regular-price">{{ prices['member']['daily'] | number:0 }}</td>
+          <td class="yellow">{{ prices['member']['daily']*.9 | number:0 }}</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td class="price-package">Weekly</td>
+          <td class="regular-price">{{ prices['member']['weekly'] | number:0 }}</td>
+          <td class="yellow">{{ prices['member']['weekly']*.9 | number:0 }}</td>
+          <td class="regular-price">{{ prices['add-on']['small-office']['weekly'] | number:0 }}</td>
+          <td class="yellow">{{ prices['add-on']['small-office']['weekly']*.9 | number:0 }}</td>
+          <td class="regular-price">{{ prices['add-on']['large-office']['weekly'] | number:0 }}</td>
+          <td class="yellow">{{ prices['add-on']['large-office']['weekly']*.9 | number:0 }}</td>
+          <td>{{ prices['add-on']['locker']['weekly'] | number:0 }}</td>
+        </tr>
+        <tr>
+          <td class="price-package">Monthly</td>
+          <td class="regular-price">{{ prices['member']['monthly'] | number:0 }}</td>
+          <td class="yellow">{{ prices['member']['monthly']*.9 | number:0 }}</td>
+          <td class="regular-price">{{ prices['add-on']['small-office']['monthly'] | number:0 }}</td>
+          <td class="yellow">{{ prices['add-on']['small-office']['monthly']*.9 | number:0 }}</td>
+          <td class="regular-price">{{ prices['add-on']['large-office']['monthly'] | number:0 }}</td>
+          <td class="yellow">{{ prices['add-on']['large-office']['monthly']*.9 | number:0 }}</td>
+          <td>{{ prices['add-on']['locker']['monthly'] | number:0 }}</td>
+        </tr>
+        <tr>
+          <td class="price-package">Quarterly</td>
+          <td class="regular-price">{{ prices['member']['quarterly'] | number:0 }}</td>
+          <td class="yellow">{{ prices['member']['quarterly']*.9 | number:0 }}</td>
+          <td class="regular-price">{{ prices['add-on']['small-office']['quarterly'] | number:0 }}</td>
+          <td class="yellow">{{ prices['add-on']['small-office']['quarterly']*.9 | number:0 }}</td>
+          <td class="regular-price">{{ prices['add-on']['large-office']['quarterly'] | number:0 }}</td>
+          <td class="yellow">{{ prices['add-on']['large-office']['quarterly']*.9 | number:0 }}</td>
+          <td>{{ prices['add-on']['locker']['quarterly'] | number:0 }}</td>
+        </tr>
+        <tr>
+          <td class="price-package">Half-yearly</td>
+          <td class="regular-price">{{ prices['member']['half-yearly'] | number:0 }}</td>
+          <td class="yellow">{{ prices['member']['half-yearly']*.9 | number:0 }}</td>
+          <td class="regular-price">{{ prices['add-on']['small-office']['half-yearly'] | number:0 }}</td>
+          <td class="yellow">{{ prices['add-on']['small-office']['half-yearly']*.9 | number:0 }}</td>
+          <td class="regular-price">{{ prices['add-on']['large-office']['half-yearly'] | number:0 }}</td>
+          <td class="yellow">{{ prices['add-on']['large-office']['half-yearly']*.9 | number:0 }}</td>
+          <td>{{ prices['add-on']['locker']['half-yearly'] }}</td>
+        </tr>
+        <tr>
+          <td class="price-package">Yearly</td>
+          <td class="regular-price">{{ prices['member']['yearly'] | number:0 }}</td>
+          <td class="yellow">{{ prices['member']['yearly']*.9 | number:0 }}</td>
+          <td class="regular-price">{{ prices['add-on']['small-office']['yearly'] | number:0 }}</td>
+          <td class="yellow">{{ prices['add-on']['small-office']['yearly']*.9 | number:0 }}</td>
+          <td class="regular-price">{{ prices['add-on']['large-office']['yearly'] | number:0 }}</td>
+          <td class="yellow">{{ prices['add-on']['large-office']['yearly']*.9 | number:0 }}</td>
+          <td>{{ prices['add-on']['locker']['yearly']}}</td>
+        </tr>
+
+        <!--<tr>-->
+          <!--<td>Monthly</td>-->
+          <!--<td>3,499</td>-->
+          <!--<td>899</td>-->
+          <!--<td>1,199</td>-->
+          <!--<td>69</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+          <!--<td>Weekly</td>-->
+          <!--<td>8,999</td>-->
+          <!--<td>3,149</td>-->
+          <!--<td>4,199</td>-->
+          <!--<td>279</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+          <!--<td>Weekly</td>-->
+          <!--<td>999</td>-->
+          <!--<td>899</td>-->
+          <!--<td>1,199</td>-->
+          <!--<td>69</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+          <!--<td>Weekly</td>-->
+          <!--<td>999</td>-->
+          <!--<td>899</td>-->
+          <!--<td>1,199</td>-->
+          <!--<td>69</td>-->
+        <!--</tr>-->
+      </tbody>
+    </table>
     <div class="row">
       <div class="span12">
-        <div class="spacer"></div>
-        <p class="footnote">*These are suggested prices. Final prices may vary. We reserve the right to change our prices without prior notice.</p>
+        <!--<div class="spacer"></div>-->
+        <p class="footnote">* Require 2 members.</p>
+        <p class="footnote">** Require at least 3 members.</p>
+        <p class="footnote">*** 10% introductory discount rate applied for early sign up.</p>
       </div>
     </div>
   </div>

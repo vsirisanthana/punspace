@@ -97,6 +97,26 @@ li {
 
 }
 
+.price-table thead th {
+    vertical-align: middle;
+}
+
+.price-table th {
+    text-align: center;
+}
+
+.price-table td {
+    text-align: right;
+}
+
+td.price-package {
+    text-align: left;
+}
+
+td.regular-price {
+    text-decoration: line-through;
+}
+
 .logotype {
     font-family: 'SubtleSansLight';
     font-weight: normal;
@@ -109,6 +129,12 @@ li {
 .brandline {
     letter-spacing: 14px;
     font-size: 18px;
+    font-weight: 200;
+}
+
+.subbrandline {
+    letter-spacing: 14px;
+    font-size: 28px;
     font-weight: 200;
 }
 
@@ -126,7 +152,7 @@ li {
 }
 
 .small-spacer {
-    height: 40px;
+    height: 10px;
 }
 
 .facility-list {
@@ -331,4 +357,11 @@ you can use the generic selector below, but it's slower:
 
 .logoicon {
     font-size: 10rem;
+}
+
+.notifications {
+    border-radius: 15px;
+    font-family: 'SubtleSansLight';
+    margin-bottom: 15px;
+    text-align: center;
 }
