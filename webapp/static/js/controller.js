@@ -41,6 +41,11 @@ function AppCtrl($scope) {
         }
     };
 
+    $scope.getPrivateOfficePlusMembershipPrice = function(officeSize, noOfMembers, duration) {
+        return $scope.prices['add-on'][officeSize][duration] +
+               noOfMembers * $scope.prices['member'][duration];
+    };
+
     // Google Maps
     $scope.latLng = new google.maps.LatLng(18.793589, 98.972349);
     $scope.map = new google.maps.Map(document.getElementById('map_canvas'), {
