@@ -81,6 +81,12 @@
     background-color: white;
 }
 
+.section-title {
+    font-family: SubtleSansRegular,Sans-Serif;
+    font-weight: normal;
+    text-transform: lowercase;
+}
+
 body {
     color: white;
     font-size: 12px;
