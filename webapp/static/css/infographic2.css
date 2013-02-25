@@ -74,8 +74,7 @@
 
 body {
     color: white;
-    font-size: 12px;
-    letter-spacing: 3px;
+    font-size: 14px;
 }
 
 section {
@@ -114,13 +113,15 @@ td.regular-price {
     text-decoration: line-through;
 }
 
+.logo {
+    padding-bottom: 8px;
+}
+
 .logotype {
     font-family: SubtleSansRegular, sans-serif;
-    font-weight: normal;
-    font-size: 150px;
-    letter-spacing: 30px;
-    line-height: 150px;
-    margin-left: -8px;
+    font-size: 72px;
+    letter-spacing: 1rem;
+    line-height: 1;
     text-transform: lowercase;
 }
 
@@ -130,9 +131,36 @@ td.regular-price {
 
 .brandline {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    letter-spacing: 14px;
-    font-size: 18px;
-    font-weight: 200;
+    font-size: 11px;
+    letter-spacing: .5rem;
+}
+
+.hero-title {
+    font-family: SubtleSansUltraLight, sans-serif;
+    font-size: 120px;
+    line-height: 1;
+    margin: 120px 0px;
+    opacity: .8;
+    text-transform: lowercase;
+
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+
+.hero-title:hover {
+    /*font-size: 150px;*/
+    /*letter-spacing: 10px;*/
+    opacity: 1;
+}
+
+form {
+    display: inline-block;
+}
+
+.email-submit {
+    padding: 15px 0px 10px;
 }
 
 .subbrandline {
@@ -149,6 +177,8 @@ td.regular-price {
     line-height: 30px;
     margin-bottom: 50px;
 }
+
+
 
 .spacer {
     height: 100px;
