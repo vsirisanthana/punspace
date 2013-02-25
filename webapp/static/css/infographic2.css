@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'SubtleSansRegular';
+    font-family: 'SubtleSansRegular',Sans-Serif;
     src: url('/static/font/subtlesans/SubtleSansRegular.eot');
     src: local('â˜º'), url('/static/font/subtlesans/SubtleSansRegular.woff') format('woff'), url('/static/font/subtlesans/SubtleSansRegular.ttf') format('truetype'), url('/static/font/subtlesans/SubtleSansRegular.svg') format('svg');
     font-weight: normal;
@@ -7,7 +7,7 @@
 }
 
 @font-face {
-    font-family: 'SubtleSansLight';
+    font-family: 'SubtleSansLight',Sans-Serif;
     src: url('/static/font/subtlesans/SubtleSansLight.eot');
     src: local('â˜º'), url('/static/font/subtlesans/SubtleSansLight.woff') format('woff'), url('/static/font/subtlesans/SubtleSansLight.ttf') format('truetype'), url('/static/font/subtlesans/SubtleSansLight.svg') format('svg');
     font-weight: normal;
@@ -15,7 +15,7 @@
 }
 
 @font-face {
-    font-family: 'SubtleSansUltraLight';
+    font-family: 'SubtleSansUltraLight',Sans-Serif;
     src: url('/static/font/subtlesans/SubtleSansUltraLight.eot');
     src: local('â˜º'), url('/static/font/subtlesans/SubtleSansUltraLight.woff') format('woff'), url('/static/font/subtlesans/SubtleSansUltraLight.ttf') format('truetype'), url('/static/font/subtlesans/SubtleSansUltraLight.svg') format('svg');
     font-weight: normal;
