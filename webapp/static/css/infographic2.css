@@ -113,6 +113,19 @@ td.regular-price {
     text-decoration: line-through;
 }
 
+.radiate-on-hover {
+    opacity: .8;
+
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+
+.radiate-on-hover:hover {
+    opacity: 1;
+}
+
 .logo {
     padding-bottom: 8px;
 }
@@ -135,24 +148,31 @@ td.regular-price {
     letter-spacing: .5rem;
 }
 
-.hero-title {
-    font-family: SubtleSansUltraLight, sans-serif;
-    font-size: 120px;
-    line-height: 1;
-    margin: 120px 0px;
-    opacity: .8;
-    text-transform: lowercase;
-
-    -webkit-transition: all 1s ease-in-out;
-    -moz-transition: all 1s ease-in-out;
-    -o-transition: all 1s ease-in-out;
-    transition: all 1s ease-in-out;
+.hero {
+    margin: 60px 0px;
 }
 
-.hero-title:hover {
-    /*font-size: 150px;*/
-    /*letter-spacing: 10px;*/
-    opacity: 1;
+.hero-title {
+    font-family: SubtleSansUltraLight, sans-serif;
+    line-height: 1;
+    opacity: .8;
+    text-transform: lowercase;
+}
+
+.hero-title .strong {
+    font-family: SubtleSansLight, sans-serif;
+}
+
+#open-march-4th {
+    font-size: 96px;
+}
+
+#free-desk {
+    font-size: 154px
+}
+
+#entire-march {
+    font-size: 88px;
 }
 
 form {
