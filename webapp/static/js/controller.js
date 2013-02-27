@@ -107,7 +107,7 @@ function AppCtrl($scope) {
 //    $scope.layer.setMap($scope.map);
     $scope.places = [];
 
-    $.get('https://www.googleapis.com/fusiontables/v1/query?sql=SELECT%20Name,Location%20FROM%20' + $scope.tableId +
+    $.get('https://www.googleapis.com/fusiontables/v1/query?sql=SELECT%20Name,Location,Type%20FROM%20' + $scope.tableId +
         '&key=' + $scope.apiKey, function(data, textStatus, jqXHR) {
             $scope.places = data.rows;
             angular.forEach($scope.places, function(place) {
@@ -117,9 +117,20 @@ function AppCtrl($scope) {
                     marker = new google.maps.Marker({
                         position: new google.maps.LatLng(lat, lng),
                         title: place[0],
-                        icon: '/static/images/1358717663_kteatime.png'
+                        icon: $scope.getMarkerIconPath(place[2])
                     });
                 marker.setMap($scope.map);
             });
         });
+
+    $scope.getMarkerIconPath = function(type) {
+        var iconPath = '/static/images/';
+        if (type === 'coffee') {
+            return iconPath + '1358717663_kteatime.png';
+        } else if (type === 'convenience store') {
+            return iconPath + '7-11-logo.jpg';
+        } else if (type === 'dinner') {
+            return iconPath + 'monotone_fork_spoon_eat_launch_restaurant_dinner.png';
+        }
+    };
 }
