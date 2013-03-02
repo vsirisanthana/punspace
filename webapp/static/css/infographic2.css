@@ -136,6 +136,8 @@ td.regular-price {
 
 .logo {
     padding-bottom: 8px;
+    margin-top: -100px;
+    padding-top: 80px;
 }
 
 .logotype {
@@ -195,7 +197,7 @@ form {
 }
 
 .email-submit {
-    padding: 15px 0px 10px;
+    padding: 15px 0px 50px;
 }
 
 .subbrandline {
@@ -432,4 +434,26 @@ you can use the generic selector below, but it's slower:
     font-family: 'SubtleSansLight';
     margin-bottom: 15px;
     text-align: center;
+}
+
+.brand {
+    font-family: SubtleSansRegular, sans-serif;
+    letter-spacing: 2px;
+    text-transform: lowercase;
+}
+
+.brand .light {
+    font-family: SubtleSansLight, sans-serif;
+}
+
+/*.navbar-inverse .brand {*/
+    /*color: white;*/
+/*}*/
+
+.navbar-inverse .brand, .navbar-inverse .nav>li>a {
+     color: white;
+}
+
+.navbar-inverse .brand:hover, .navbar-inverse .nav>li>a:hover {
+    color: #f15b41;
 }
