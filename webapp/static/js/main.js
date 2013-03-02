@@ -7,7 +7,7 @@ $(function() {
     })
     var deck = new $.scrolldeck({
         slides: '.slide',
-        buttons: '.nav-button',
+        buttons: '.nav a',
         easing: 'easeInOutExpo'
     });
 });
