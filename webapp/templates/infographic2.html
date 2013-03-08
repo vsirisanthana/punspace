@@ -274,94 +274,173 @@
 <!--</div>-->
 <!--</section>-->
 
-<section id="pricing" class="background-grey slide">
+<section id="pricing" class="background-green slide">
   <div class="container">
     <h1 class="section-title">Pricing</h1>
+
+    <h2 class="section-subtitle">Day pass & Flexible package (Non-member)</h2>
     <table class="price-table table table-bordered">
       <thead>
-      <tr>
-        <th class="table-header" rowspan="3"></th>
-        <th class="table-header" rowspan="2" colspan="2">Membership</th>
-        <th class="table-header" colspan="4">Private Office</th>
-      </tr>
-      <tr>
-        <th class="table-header" colspan="2">Small (2 memberships included)</th>
-        <th class="table-header" colspan="2">Large (3 memberships included)</th>
-      </tr>
-      <tr>
-        <th class="table-header">Regular</th>
-        <th class="table-header yellow">Promotion*</th>
-        <th class="table-header">Regular</th>
-        <th class="table-header yellow">Promotion*</th>
-        <th class="table-header">Regular</th>
-        <th class="table-header yellow">Promotion*</th>
-      </tr>
+        <tr>
+          <th class="table-header">Day pass</th>
+          <th class="table-header">Flexi 5 (30 days)</th>
+          <th class="table-header">Flexi 10 (30 days)</th>
+          <th class="table-header">Flexi 20 (60 days)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="yellow">{{ prices['day-pass']*.9 | number:0 }}</td>
+          <td class="yellow">{{ prices['flexi']['5']*.9 | number:0 }}</td>
+          <td class="yellow">{{ prices['flexi']['10']*.9 | number:0 }}</td>
+          <td class="yellow">{{ prices['flexi']['20']*.9 | number:0 }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-subtitle">Membership</h2>
+    <table class="price-table table table-bordered">
+      <thead>
+        <tr>
+          <!--<th class="table-header"></th>-->
+          <th class="table-header">Weekly</th>
+          <th class="table-header">Monthly</th>
+          <th class="table-header">Quarterly</th>
+          <th class="table-header">Half-yearly</th>
+          <th class="table-header">Yearly</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <!--<td class="price-package">Member</td>-->
+          <td class="yellow">{{ prices['member']['weekly']*.9 | number:0 }}</td>
+          <td class="yellow">{{ prices['member']['monthly']*.9 | number:0 }}</td>
+          <td class="yellow">{{ prices['member']['quarterly']*.9 | number:0 }}</td>
+          <td class="yellow">{{ prices['member']['half-yearly']*.9 | number:0 }}</td>
+          <td class="yellow">{{ prices['member']['yearly']*.9 | number:0 }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-subtitle">Private office</h2>
+    <table class="price-table table table-bordered">
+      <thead>
+        <tr>
+          <th class="table-header"></th>
+          <th class="table-header">Weekly</th>
+          <th class="table-header">Monthly</th>
+          <th class="table-header">Quarterly</th>
+          <th class="table-header">Half-yearly</th>
+          <th class="table-header">Yearly</th>
+        </tr>
       </thead>
       <tbody>
       <tr>
-        <td class="price-package">Daily</td>
-        <td class="regular-price">{{ prices['member']['daily'] | number:0 }}</td>
-        <td class="yellow">{{ prices['member']['daily']*.9 | number:0 }}</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-      </tr>
-      <tr>
-        <td class="price-package">Weekly</td>
-        <td class="regular-price">{{ prices['member']['weekly'] | number:0 }}</td>
-        <td class="yellow">{{ prices['member']['weekly']*.9 | number:0 }}</td>
-        <td class="regular-price">{{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'weekly') | number:0 }}</td>
-        <td class="yellow">{{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'weekly')*.9 | number:0 }}</td>
-        <td class="regular-price">{{ getPrivateOfficePlusMembershipPrice('large-office', 3, 'weekly') | number:0 }}</td>
+        <td class="price-package">Large (includes 3 memberships)</td>
         <td class="yellow">{{ getPrivateOfficePlusMembershipPrice('large-office', 3, 'weekly')*.9 | number:0 }}</td>
-      </tr>
-      <tr>
-        <td class="price-package">Monthly</td>
-        <td class="regular-price">{{ prices['member']['monthly'] | number:0 }}</td>
-        <td class="yellow">{{ prices['member']['monthly']*.9 | number:0 }}</td>
-        <td class="regular-price">{{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'monthly') | number:0 }}
-        </td>
-        <td class="yellow">{{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'monthly')*.9 | number:0 }}</td>
-        <td class="regular-price">{{ getPrivateOfficePlusMembershipPrice('large-office', 3, 'monthly') | number:0 }}
-        </td>
         <td class="yellow">{{ getPrivateOfficePlusMembershipPrice('large-office', 3, 'monthly')*.9 | number:0 }}</td>
-      </tr>
-      <tr>
-        <td class="price-package">Quarterly</td>
-        <td class="regular-price">{{ prices['member']['quarterly'] | number:0 }}</td>
-        <td class="yellow">{{ prices['member']['quarterly']*.9 | number:0 }}</td>
-        <td class="regular-price">{{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'quarterly') | number:0 }}
-        </td>
-        <td class="yellow">{{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'quarterly')*.9 | number:0 }}</td>
-        <td class="regular-price">{{ getPrivateOfficePlusMembershipPrice('large-office', 3, 'quarterly') | number:0 }}
-        </td>
         <td class="yellow">{{ getPrivateOfficePlusMembershipPrice('large-office', 3, 'quarterly')*.9 | number:0 }}</td>
-      </tr>
-      <tr>
-        <td class="price-package">Half-yearly</td>
-        <td class="regular-price">{{ prices['member']['half-yearly'] | number:0 }}</td>
-        <td class="yellow">{{ prices['member']['half-yearly']*.9 | number:0 }}</td>
-        <td class="regular-price">{{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'half-yearly') | number:0
-          }}
-        </td>
-        <td class="yellow">{{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'half-yearly')*.9 | number:0 }}
-        </td>
-        <td class="regular-price">{{ getPrivateOfficePlusMembershipPrice('large-office', 3, 'half-yearly') | number:0
-          }}
-        </td>
-        <td class="yellow">{{ getPrivateOfficePlusMembershipPrice('large-office', 3, 'half-yearly')*.9 | number:0 }}
-        </td>
-      </tr>
-      <tr>
-        <td class="price-package">Yearly</td>
-        <td class="regular-price">{{ prices['member']['yearly'] | number:0 }}</td>
-        <td class="yellow">{{ prices['member']['yearly']*.9 | number:0 }}</td>
-        <td class="regular-price">{{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'yearly') | number:0 }}</td>
-        <td class="yellow">{{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'yearly')*.9 | number:0 }}</td>
-        <td class="regular-price">{{ getPrivateOfficePlusMembershipPrice('large-office', 3, 'yearly') | number:0 }}</td>
+        <td class="yellow">{{ getPrivateOfficePlusMembershipPrice('large-office', 3, 'half-yearly')*.9 | number:0 }}</td>
         <td class="yellow">{{ getPrivateOfficePlusMembershipPrice('large-office', 3, 'yearly')*.9 | number:0 }}</td>
       </tr>
+      <tr>
+        <td class="price-package">Small (includes 2 memberships)</td>
+        <td class="yellow">{{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'weekly')*.9 | number:0 }}</td>
+        <td class="yellow">{{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'monthly')*.9 | number:0 }}</td>
+        <td class="yellow">{{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'quarterly')*.9 | number:0 }}</td>
+        <td class="yellow">{{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'half-yearly')*.9 | number:0 }}</td>
+        <td class="yellow">{{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'yearly')*.9 | number:0 }}</td>
+      </tr>
+      </tbody>
+    </table>
+
+
+
+    <!--<table class="price-table table table-bordered">-->
+      <!--<thead>-->
+      <!--<tr>-->
+        <!--<th class="table-header" rowspan="3"></th>-->
+        <!--<th class="table-header" rowspan="2" colspan="2">Membership</th>-->
+        <!--<th class="table-header" colspan="4">Private Office</th>-->
+      <!--</tr>-->
+      <!--<tr>-->
+        <!--<th class="table-header" colspan="2">Small (2 memberships included)</th>-->
+        <!--<th class="table-header" colspan="2">Large (3 memberships included)</th>-->
+      <!--</tr>-->
+      <!--<tr>-->
+        <!--<th class="table-header">Regular</th>-->
+        <!--<th class="table-header yellow">Promotion*</th>-->
+        <!--<th class="table-header">Regular</th>-->
+        <!--<th class="table-header yellow">Promotion*</th>-->
+        <!--<th class="table-header">Regular</th>-->
+        <!--<th class="table-header yellow">Promotion*</th>-->
+      <!--</tr>-->
+      <!--</thead>-->
+      <!--<tbody>-->
+      <!--<tr>-->
+        <!--<td class="price-package">Daily</td>-->
+        <!--<td class="regular-price">{{ prices['member']['daily'] | number:0 }}</td>-->
+        <!--<td class="yellow">{{ prices['member']['daily']*.9 | number:0 }}</td>-->
+        <!--<td>-</td>-->
+        <!--<td>-</td>-->
+        <!--<td>-</td>-->
+        <!--<td>-</td>-->
+      <!--</tr>-->
+      <!--<tr>-->
+        <!--<td class="price-package">Weekly</td>-->
+        <!--<td class="regular-price">{{ prices['member']['weekly'] | number:0 }}</td>-->
+        <!--<td class="yellow">{{ prices['member']['weekly']*.9 | number:0 }}</td>-->
+        <!--<td class="regular-price">{{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'weekly') | number:0 }}</td>-->
+        <!--<td class="yellow">{{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'weekly')*.9 | number:0 }}</td>-->
+        <!--<td class="regular-price">{{ getPrivateOfficePlusMembershipPrice('large-office', 3, 'weekly') | number:0 }}</td>-->
+        <!--<td class="yellow">{{ getPrivateOfficePlusMembershipPrice('large-office', 3, 'weekly')*.9 | number:0 }}</td>-->
+      <!--</tr>-->
+      <!--<tr>-->
+        <!--<td class="price-package">Monthly</td>-->
+        <!--<td class="regular-price">{{ prices['member']['monthly'] | number:0 }}</td>-->
+        <!--<td class="yellow">{{ prices['member']['monthly']*.9 | number:0 }}</td>-->
+        <!--<td class="regular-price">{{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'monthly') | number:0 }}-->
+        <!--</td>-->
+        <!--<td class="yellow">{{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'monthly')*.9 | number:0 }}</td>-->
+        <!--<td class="regular-price">{{ getPrivateOfficePlusMembershipPrice('large-office', 3, 'monthly') | number:0 }}-->
+        <!--</td>-->
+        <!--<td class="yellow">{{ getPrivateOfficePlusMembershipPrice('large-office', 3, 'monthly')*.9 | number:0 }}</td>-->
+      <!--</tr>-->
+      <!--<tr>-->
+        <!--<td class="price-package">Quarterly</td>-->
+        <!--<td class="regular-price">{{ prices['member']['quarterly'] | number:0 }}</td>-->
+        <!--<td class="yellow">{{ prices['member']['quarterly']*.9 | number:0 }}</td>-->
+        <!--<td class="regular-price">{{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'quarterly') | number:0 }}-->
+        <!--</td>-->
+        <!--<td class="yellow">{{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'quarterly')*.9 | number:0 }}</td>-->
+        <!--<td class="regular-price">{{ getPrivateOfficePlusMembershipPrice('large-office', 3, 'quarterly') | number:0 }}-->
+        <!--</td>-->
+        <!--<td class="yellow">{{ getPrivateOfficePlusMembershipPrice('large-office', 3, 'quarterly')*.9 | number:0 }}</td>-->
+      <!--</tr>-->
+      <!--<tr>-->
+        <!--<td class="price-package">Half-yearly</td>-->
+        <!--<td class="regular-price">{{ prices['member']['half-yearly'] | number:0 }}</td>-->
+        <!--<td class="yellow">{{ prices['member']['half-yearly']*.9 | number:0 }}</td>-->
+        <!--<td class="regular-price">{{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'half-yearly') | number:0-->
+          <!--}}-->
+        <!--</td>-->
+        <!--<td class="yellow">{{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'half-yearly')*.9 | number:0 }}-->
+        <!--</td>-->
+        <!--<td class="regular-price">{{ getPrivateOfficePlusMembershipPrice('large-office', 3, 'half-yearly') | number:0-->
+          <!--}}-->
+        <!--</td>-->
+        <!--<td class="yellow">{{ getPrivateOfficePlusMembershipPrice('large-office', 3, 'half-yearly')*.9 | number:0 }}-->
+        <!--</td>-->
+      <!--</tr>-->
+      <!--<tr>-->
+        <!--<td class="price-package">Yearly</td>-->
+        <!--<td class="regular-price">{{ prices['member']['yearly'] | number:0 }}</td>-->
+        <!--<td class="yellow">{{ prices['member']['yearly']*.9 | number:0 }}</td>-->
+        <!--<td class="regular-price">{{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'yearly') | number:0 }}</td>-->
+        <!--<td class="yellow">{{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'yearly')*.9 | number:0 }}</td>-->
+        <!--<td class="regular-price">{{ getPrivateOfficePlusMembershipPrice('large-office', 3, 'yearly') | number:0 }}</td>-->
+        <!--<td class="yellow">{{ getPrivateOfficePlusMembershipPrice('large-office', 3, 'yearly')*.9 | number:0 }}</td>-->
+      <!--</tr>-->
 
       <!--<tr>-->
       <!--<td>Monthly</td>-->
@@ -401,6 +480,52 @@
         <p class="footnote yellow">*Valid until April 30th, 2013</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="pricing02" class="background-yellow slide">
+  <div class="container">
+    <h1 class="section-title">Pricing (cont.)</h1>
+
+    <h2 class="section-subtitle">Meeting room</h2>
+    <table class="price-table table table-bordered">
+      <thead>
+      <tr>
+        <th class="table-header" rowspan="2"></th>
+        <th class="table-header" colspan="2">Hourly</th>
+        <th class="table-header" colspan="2">Half day (4 hrs)</th>
+        <th class="table-header" colspan="2">Full day (8 hrs)</th>
+      </tr>
+      <tr>
+        <th class="table-header">Member</th>
+        <th class="table-header">Non-member</th>
+        <th class="table-header">Member</th>
+        <th class="table-header">Non-member</th>
+        <th class="table-header">Member</th>
+        <th class="table-header">Non-member</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="price-package">Large (max 8 persons)</td>
+        <td class="grey">{{ prices['meeting']['hourly'] | number:0 }}</td>
+        <td>{{ prices['meeting']['hourly']*3 | number:0 }}</td>
+        <td class="grey">{{ prices['meeting']['half-day'] | number:0 }}</td>
+        <td>{{ prices['meeting']['half-day']*3 | number:0 }}</td>
+        <td class="grey">{{ prices['meeting']['full-day'] | number:0 }}</td>
+        <td>{{ prices['meeting']['full-day']*3 | number:0 }}</td>
+      </tr>
+      <tr>
+        <td class="price-package">Small (max 4 persons)</td>
+        <td class="grey">{{ prices['meeting']['hourly']*.5 | number:0 }}</td>
+        <td>{{ prices['meeting']['hourly']*.5*3 | number:0 }}</td>
+        <td class="grey">{{ prices['meeting']['half-day']*.5 | number:0 }}</td>
+        <td>{{ prices['meeting']['half-day']*.5*3 | number:0 }}</td>
+        <td class="grey">{{ prices['meeting']['full-day']*.5 | number:0 }}</td>
+        <td>{{ prices['meeting']['full-day']*.5*3 | number:0 }}</td>
+      </tr>
+      </tbody>
+    </table>
   </div>
 </section>
 

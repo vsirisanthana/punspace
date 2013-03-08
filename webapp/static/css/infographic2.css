@@ -80,6 +80,10 @@
     text-transform: lowercase;
 }
 
+.section-subtitle {
+    font-size: 21px;
+}
+
 body {
     color: white;
     font-size: 14px;

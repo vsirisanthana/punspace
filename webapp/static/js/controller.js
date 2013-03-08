@@ -8,6 +8,12 @@ function AppCtrl($scope) {
     $scope.s = 1/5;
 
     $scope.prices = {
+        'day-pass': 199,
+        'flexi': {
+            '5': 999,
+            '10': 1899,
+            '20': 3599
+        },
         member: {
             daily: 199,
             weekly: 999,
@@ -38,6 +44,11 @@ function AppCtrl($scope) {
                 'half-yearly': 'free',
                 yearly: 'free'
             }
+        },
+        meeting: {
+            hourly: 100,
+            'half-day': 320,
+            'full-day': 600
         }
     };
 
