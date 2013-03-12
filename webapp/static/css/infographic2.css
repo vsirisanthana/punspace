@@ -461,3 +461,8 @@ you can use the generic selector below, but it's slower:
 .navbar-inverse .brand:hover, .navbar-inverse .nav>li>a:hover {
     color: #f15b41;
 }
+
+.price {
+    font-size: 20px;
+    letter-spacing: 2px;
+}
