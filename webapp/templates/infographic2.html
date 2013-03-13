@@ -278,12 +278,12 @@
   <div class="container">
     <h1 class="section-title">Pricing</h1>
 
-    <h2 class="section-subtitle">Day pass & Flexible package (Non-member)</h2>
+    <h2 class="section-subtitle">Passes (Non-member)</h2>
     <table class="price-table table table-bordered">
       <thead>
         <tr>
           <th class="table-header">Day pass</th>
-          <!--<th class="table-header">Flexi 5 days<br/>(valid 30 days)</th>-->
+          <th class="table-header">Week pass</th>
           <th class="table-header">Flexi 10 days<br/>(valid 30 days)</th>
           <th class="table-header">Flexi 20 days<br/>(valid 60 days)</th>
         </tr>
@@ -291,7 +291,7 @@
       <tbody>
         <tr>
           <td class="yellow price">&#x0E3F;{{ prices['day-pass']*.9 | number:0 }}*</td>
-          <!--<td class="yellow price">&#x0E3F;{{ prices['flexi']['5']*.9 | number:0 }}*</td>-->
+          <td class="yellow price">&#x0E3F;{{ prices['week-pass']*.9 | number:0 }}*</td>
           <td class="yellow price">&#x0E3F;{{ prices['flexi']['10']*.9 | number:0 }}*</td>
           <td class="yellow price">&#x0E3F;{{ prices['flexi']['20']*.9 | number:0 }}*</td>
         </tr>
@@ -303,7 +303,7 @@
       <thead>
         <tr>
           <!--<th class="table-header"></th>-->
-          <th class="table-header">Weekly</th>
+          <!--<th class="table-header">Weekly</th>-->
           <th class="table-header">Monthly</th>
           <th class="table-header">Quarterly</th>
           <th class="table-header">Half-yearly</th>
@@ -313,7 +313,7 @@
       <tbody>
         <tr>
           <!--<td class="price-package">Member</td>-->
-          <td class="yellow price">&#x0E3F;{{ prices['member']['weekly']*.9 | number:0 }}*</td>
+          <!--<td class="yellow price">&#x0E3F;{{ prices['member']['weekly']*.9 | number:0 }}*</td>-->
           <td class="yellow price">&#x0E3F;{{ prices['member']['monthly']*.9 | number:0 }}*</td>
           <td class="yellow price">&#x0E3F;{{ prices['member']['quarterly']*.9 | number:0 }}*</td>
           <td class="yellow price">&#x0E3F;{{ prices['member']['half-yearly']*.9 | number:0 }}*</td>

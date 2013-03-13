@@ -9,6 +9,7 @@ function AppCtrl($scope) {
 
     $scope.prices = {
         'day-pass': 199,
+        'week-pass': 999,
         'flexi': {
             '5': 999,
             '10': 1899,
