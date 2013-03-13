@@ -144,6 +144,10 @@ td.regular-price {
     padding-top: 80px;
 }
 
+.nav-logo{
+    width: 20px;
+}
+
 .logotype {
     font-family: SubtleSansRegular, sans-serif;
     font-size: 72px;
