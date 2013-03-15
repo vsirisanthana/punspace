@@ -10,4 +10,8 @@ $(function() {
         buttons: '.nav a',
         easing: 'easeInOutExpo'
     });
+
+    Galleria.loadTheme('static/lib/galleria/themes/classic/galleria.classic.min.js');
+    Galleria.run('#galleria');
+
 });

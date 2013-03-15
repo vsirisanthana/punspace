@@ -481,3 +481,13 @@ you can use the generic selector below, but it's slower:
 #privilege tbody td:first-child{
     text-align: left;
 }
+
+#galleria{
+    width: 900px;
+    height: 600px;
+    background: #828487
+}
+
+.galleria-container{
+    background:#828487;
+}
