@@ -136,13 +136,20 @@ function AppCtrl($scope) {
         });
 
     $scope.getMarkerIconPath = function(type) {
-        var iconPath = '/static/images/';
-        if (type === 'coffee') {
+        var iconPath = '/static/images/',
+            lowerCaseType = type.toLowerCase();
+        if (lowerCaseType === 'coffee') {
             return iconPath + '1358717663_kteatime.png';
-        } else if (type === 'convenience store') {
+        } else if (lowerCaseType === 'convenience store') {
             return iconPath + '7-11-logo.jpg';
-        } else if (type === 'dinner') {
+        } else if (['dinner', 'restaurant'].indexOf(lowerCaseType) !== -1) {
             return iconPath + 'monotone_fork_spoon_eat_launch_restaurant_dinner.png';
+        } else if (['apartment', 'hotel', 'condo', 'residence', 'resort', 'guest house'].indexOf(lowerCaseType) !== -1) {
+            return iconPath + 'hotel_icon.png';
+        } else if (['pub&restaurant', 'bar&restaurant', 'cafe', 'bar', 'bar&pub', 'food&drink', 'coffee,bar,cuisine'].indexOf(lowerCaseType) !== -1) {
+            return iconPath + 'drink_bar_cocktails.png';
+        } else if (['bakery'].indexOf(lowerCaseType) !== -1) {
+            return iconPath + 'icon-4-124_orange.gif';
         }
     };
 }
