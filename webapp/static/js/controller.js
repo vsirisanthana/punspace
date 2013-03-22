@@ -117,16 +117,30 @@ function AppCtrl($scope) {
 //    });
 
 //    $scope.layer.setMap($scope.map);
-    $scope.placeTypes = ['coffee', 'restaurant', 'accommodation', 'bakery', 'store', 'alcohol'];
 
-    $scope.places = [];
+    // Place types and labels
+    $scope.placeTypes = [
+        ['coffee', 'Coffee'],
+        ['bakery', 'Bakery'],
+        ['restaurant', 'Restaurant'],
+        ['alcohol', 'Pub & Bar'],
+        ['accommodation', 'Accommodation'],
+        ['store', 'Convenience Store']
+    ];
 
     // Initialize arrays to store markers
     $scope.markers = {};
     angular.forEach($scope.placeTypes, function(placeType) {
-        $scope.markers[placeType] = [];
+        $scope.markers[placeType[0]] = [];
     });
 
+    // Initialize marker filters
+    $scope.markerFilters = {};
+    angular.forEach($scope.placeTypes, function(placeType) {
+        $scope.markerFilters[placeType[0]] = true;
+    });
+
+    $scope.places = [];
     $.get('https://www.googleapis.com/fusiontables/v1/query?sql=SELECT%20Name,Location,Type%20FROM%20' + $scope.tableId +
         '&key=' + $scope.apiKey, function(data, textStatus, jqXHR) {
             $scope.places = data.rows;
@@ -190,25 +204,12 @@ function AppCtrl($scope) {
         }
     };
 
-    $scope.markerFilters = {
-        coffee: true,
-        restaurant: true,
-        alcohol: true,
-        store: true,
-        accommodation: true
-    };
-
     angular.forEach($scope.placeTypes, function(placeType) {
-        $scope.$watch('markerFilters.' + placeType, function(newValue) {
-            angular.forEach($scope.markers[placeType], function(marker) {
+        var type = placeType[0];
+        $scope.$watch('markerFilters.' + type, function(newValue) {
+            angular.forEach($scope.markers[type], function(marker) {
                 marker.setVisible(newValue);
             });
         });
     });
-
-//    $scope.$watch('markerFilters.coffee', function(newValue, oldValue) {
-//        angular.forEach($scope.markers['coffee'], function(marker) {
-//            marker.setVisible(newValue);
-//        });
-//    });
 }

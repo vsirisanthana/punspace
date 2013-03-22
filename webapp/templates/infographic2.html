@@ -238,20 +238,8 @@
 
     <form class="form-inline">
       <span>Show: </span>
-      <label class="checkbox">
-        <input type="checkbox" ng-model="markerFilters.coffee"> Coffee
-      </label>
-      <label class="checkbox">
-        <input type="checkbox" ng-model="markerFilters.restaurant"> Restaurant
-      </label>
-      <label class="checkbox">
-        <input type="checkbox" ng-model="markerFilters.alcohol"> Pub & Bar
-      </label>
-      <label class="checkbox">
-        <input type="checkbox" ng-model="markerFilters.store"> Convenience Store
-      </label>
-      <label class="checkbox">
-        <input type="checkbox" ng-model="markerFilters.accommodation"> Accommodation
+      <label class="checkbox" ng-repeat="placeType in placeTypes">
+        <input type="checkbox" ng-model="markerFilters[placeType[0]]"> {{ placeType[1] }} &nbsp;
       </label>
     </form>
   </div>
