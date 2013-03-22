@@ -235,6 +235,25 @@
     <p>14 Siri Mangkalajarn Lane 11, 2br office centre</p>
 
     <div id="map_canvas"></div>
+
+    <form class="form-inline">
+      <span>Show: </span>
+      <label class="checkbox">
+        <input type="checkbox" ng-model="markerFilters.coffee"> Coffee
+      </label>
+      <label class="checkbox">
+        <input type="checkbox" ng-model="markerFilters.restaurant"> Restaurant
+      </label>
+      <label class="checkbox">
+        <input type="checkbox" ng-model="markerFilters.alcohol"> Pub & Bar
+      </label>
+      <label class="checkbox">
+        <input type="checkbox" ng-model="markerFilters.store"> Convenience Store
+      </label>
+      <label class="checkbox">
+        <input type="checkbox" ng-model="markerFilters.accommodation"> Accommodation
+      </label>
+    </form>
   </div>
 </section>
 

@@ -117,39 +117,98 @@ function AppCtrl($scope) {
 //    });
 
 //    $scope.layer.setMap($scope.map);
+    $scope.placeTypes = ['coffee', 'restaurant', 'accommodation', 'bakery', 'store', 'alcohol'];
+
     $scope.places = [];
+
+    // Initialize arrays to store markers
+    $scope.markers = {};
+    angular.forEach($scope.placeTypes, function(placeType) {
+        $scope.markers[placeType] = [];
+    });
 
     $.get('https://www.googleapis.com/fusiontables/v1/query?sql=SELECT%20Name,Location,Type%20FROM%20' + $scope.tableId +
         '&key=' + $scope.apiKey, function(data, textStatus, jqXHR) {
             $scope.places = data.rows;
             angular.forEach($scope.places, function(place) {
-                var latLng = place[1].split(','),
+                var type = $scope.getSimplifiedPlaceType(place[2]),
+                    latLng = place[1].split(','),
                     lat = parseFloat(latLng[0]),
                     lng = parseFloat(latLng[1]),
                     marker = new google.maps.Marker({
                         position: new google.maps.LatLng(lat, lng),
                         title: place[0],
-                        icon: $scope.getMarkerIconPath(place[2])
+                        icon: $scope.getMarkerIconPath(type)
                     });
+                $scope.markers[type].push(marker);
                 marker.setMap($scope.map);
             });
         });
 
-    $scope.getMarkerIconPath = function(type) {
-        var iconPath = '/static/images/',
-            lowerCaseType = type.toLowerCase();
-        if (lowerCaseType === 'coffee') {
-            return iconPath + '1358717663_kteatime.png';
-        } else if (lowerCaseType === 'convenience store') {
-            return iconPath + '7-11-logo.jpg';
-        } else if (['dinner', 'restaurant'].indexOf(lowerCaseType) !== -1) {
-            return iconPath + 'monotone_fork_spoon_eat_launch_restaurant_dinner.png';
-        } else if (['apartment', 'hotel', 'condo', 'residence', 'resort', 'guest house'].indexOf(lowerCaseType) !== -1) {
-            return iconPath + 'hotel_icon.png';
-        } else if (['pub&restaurant', 'bar&restaurant', 'cafe', 'bar', 'bar&pub', 'food&drink', 'coffee,bar,cuisine'].indexOf(lowerCaseType) !== -1) {
-            return iconPath + 'drink_bar_cocktails.png';
-        } else if (['bakery'].indexOf(lowerCaseType) !== -1) {
-            return iconPath + 'icon-4-124_orange.gif';
+    $scope.getMarkerIconPath = function(simplifiedType) {
+        var iconPath = '/static/images/';
+        switch (simplifiedType) {
+            case 'coffee':
+                return iconPath + '1358717663_kteatime.png';
+            case 'store':
+                return iconPath + '7-11-logo.jpg';
+            case 'restaurant':
+                return iconPath + 'monotone_fork_spoon_eat_launch_restaurant_dinner.png';
+            case 'accommodation':
+                return iconPath + 'hotel_icon.png';
+            case 'alcohol':
+                return iconPath + 'drink_bar_cocktails.png';
+            case 'bakery':
+                return iconPath + 'icon-4-124_orange.gif';
         }
     };
+
+    $scope.getSimplifiedPlaceType = function(type) {
+        var lowerCaseType = type.toLowerCase();
+        switch (lowerCaseType) {
+            case 'dinner':
+                return 'restaurant';
+            case 'apartment':
+            case 'hotel':
+            case 'condo':
+            case 'residence':
+            case 'resort':
+            case 'guest house':
+                return 'accommodation';
+            case 'pub&restaurant':
+            case 'bar&restaurant':
+            case 'cafe':
+            case 'bar':
+            case 'bar&pub':
+            case 'food&drink':
+            case 'coffee,bar,cuisine':
+                return 'alcohol';
+            case 'convenience store':
+                return 'store';
+            default:
+                return lowerCaseType;
+        }
+    };
+
+    $scope.markerFilters = {
+        coffee: true,
+        restaurant: true,
+        alcohol: true,
+        store: true,
+        accommodation: true
+    };
+
+    angular.forEach($scope.placeTypes, function(placeType) {
+        $scope.$watch('markerFilters.' + placeType, function(newValue) {
+            angular.forEach($scope.markers[placeType], function(marker) {
+                marker.setVisible(newValue);
+            });
+        });
+    });
+
+//    $scope.$watch('markerFilters.coffee', function(newValue, oldValue) {
+//        angular.forEach($scope.markers['coffee'], function(marker) {
+//            marker.setVisible(newValue);
+//        });
+//    });
 }
