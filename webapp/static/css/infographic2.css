@@ -74,6 +74,10 @@
     background-color: white;
 }
 
+.background-black {
+    background-color: black;
+}
+
 .section-title {
     font-family: SubtleSansRegular, sans-serif;
     font-weight: normal;
@@ -333,7 +337,7 @@ form {
 
 .slide {
     margin: 0 auto;
-    width: 99%;
+    width: 100%;
     padding: 15px 0;
     padding: 8rem 0;
     height: 35rem;
@@ -490,4 +494,21 @@ you can use the generic selector below, but it's slower:
 
 .galleria-container{
     background:#febe14;
+}
+
+nav {
+    box-shadow: 0 1px 10px #000000;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+nav.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.navbar-inner {
+    background-color: black;
 }
