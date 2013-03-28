@@ -1,3 +1,7 @@
+/*
+ * Fonts
+ */
+
 @font-face {
     font-family: 'SubtleSansRegular';
     src: url('/static/font/subtlesans/SubtleSansRegular.eot');
@@ -29,6 +33,11 @@
     font-weight: normal;
     font-style: normal;
 }
+
+
+/*
+ * Colors
+ */
 
 .orange {
     color: #f15b41;
@@ -70,23 +79,44 @@
     background-color: #828487;
 }
 
-.background-white {
-    background-color: white;
-}
-
 .background-black {
     background-color: black;
 }
 
-.section-title {
-    font-family: SubtleSansRegular, sans-serif;
-    font-weight: normal;
-    text-transform: lowercase;
+.background-white {
+    background-color: white;
 }
 
-.section-subtitle {
-    font-size: 21px;
+
+/*
+ * Helpers
+ */
+.center {
+    text-align: center;
 }
+
+/*.radiate-on-hover {*/
+    /*opacity: .8;*/
+
+    /*-webkit-transition: all 1s ease-in-out;*/
+    /*-moz-transition: all 1s ease-in-out;*/
+    /*-o-transition: all 1s ease-in-out;*/
+    /*transition: all 1s ease-in-out;*/
+/*}*/
+
+/*.radiate-on-hover:hover {*/
+    /*opacity: 1;*/
+/*}*/
+
+.icon {
+    max-height: 30px;
+    max-width: 30px;
+}
+
+
+/*
+ * Default HTML element styles
+ */
 
 body {
     color: white;
@@ -94,62 +124,74 @@ body {
 }
 
 section {
-    padding: 20px 0;
-}
-
-h1 {
-    letter-spacing: 10px;
+    padding: 80px 0;
 }
 
 ul {
     list-style: none;
 }
 
-li {
-
+.section-title {
+    font-family: SubtleSansLight, sans-serif;
+    font-weight: normal;
+    letter-spacing: 3px;
+    text-transform: lowercase;
 }
 
-.price-table thead th {
-    vertical-align: middle;
+.section-subtitle {
+    font-size: 21px;
 }
 
-.price-table th {
-    text-align: center;
+
+/*
+ * Nav
+ */
+
+nav {
+    box-shadow: 0 1px 10px #000000;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
 }
 
-.price-table td {
-    text-align: right;
+nav.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
-td.price-package {
-    text-align: left;
+.navbar-inner {
+    background-color: black;
 }
 
-td.regular-price {
-    text-decoration: line-through;
+.navbar-inverse .brand, .navbar-inverse .nav>li>a {
+    color: white;
 }
 
-.radiate-on-hover {
-    opacity: .8;
-
-    -webkit-transition: all 1s ease-in-out;
-    -moz-transition: all 1s ease-in-out;
-    -o-transition: all 1s ease-in-out;
-    transition: all 1s ease-in-out;
+.navbar-inverse .brand:hover, .navbar-inverse .nav>li>a:hover {
+    color: #f15b41;
 }
 
-.radiate-on-hover:hover {
-    opacity: 1;
+.nav-logo{
+    width: 20px;
+}
+
+
+/*
+ * Hero
+ */
+
+#free-trial-march {
+    font-family: KruengPrung, sans-serif;
+    font-size: 88px;
+    letter-spacing: 7px;
+    line-height: 1.2;
 }
 
 .logo {
     padding-bottom: 8px;
     margin-top: -100px;
     padding-top: 80px;
-}
-
-.nav-logo{
-    width: 20px;
 }
 
 .logotype {
@@ -170,6 +212,16 @@ td.regular-price {
     letter-spacing: .5rem;
 }
 
+.brand {
+    font-family: SubtleSansRegular, sans-serif;
+    letter-spacing: 2px;
+    text-transform: lowercase;
+}
+
+.brand .light {
+    font-family: SubtleSansLight, sans-serif;
+}
+
 .hero {
     margin: 30px 0px;
 }
@@ -185,32 +237,13 @@ td.regular-price {
     font-family: SubtleSansLight, sans-serif;
 }
 
-#open-march-4th {
-    font-size: 88px;
-}
-
-#free-desk {
-    font-size: 154px
-}
-
-#entire-march {
-    font-size: 88px;
-}
-
-#free-trial-march {
-    font-family: KruengPrung, sans-serif;
-    font-size: 88px;
-    letter-spacing: 7px;
-    line-height: 1.2;
-}
-
 form {
     display: inline-block;
 }
 
-.email-submit {
-    padding: 15px 0px 50px;
-}
+/*.email-submit {*/
+    /*padding: 15px 0px 50px;*/
+/*}*/
 
 .subbrandline {
     letter-spacing: 14px;
@@ -227,36 +260,37 @@ form {
     margin-bottom: 50px;
 }
 
-
-
-.spacer {
-    height: 100px;
+#sociallinks{
+    padding-left: 30px;
+    text-align: center;
 }
 
-.small-spacer {
-    height: 10px;
+
+
+
+
+/*
+ * Pricing
+ */
+
+.price-table thead th {
+    vertical-align: middle;
 }
 
-.facility-list {
-    margin-top: 20px;
-    margin-bottom: 20px;
+.price-table th {
+    text-align: center;
 }
 
-.facility {
-    font-size: 20px;
-    letter-spacing: 5px;
-    line-height: 30px;
-    text-transform: uppercase;
-}
-
-.facility.large {
-    font-size: 36px;
-    letter-spacing: 5px;
-    line-height: 36px;
-}
-
-.rigg {
+.price-table td {
     text-align: right;
+}
+
+td.price-package {
+    text-align: left;
+}
+
+td.regular-price {
+    text-decoration: line-through;
 }
 
 .price-plan {
@@ -283,193 +317,6 @@ form {
     line-height: 32px;
 }
 
-#map_canvas {
-    height: 500px;
-}
-
-.ribbon {
-    font-size: 16px !important;
-    /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
-
-    width: 50%;
-
-    position: relative;
-    background: #ba89b6;
-    color: #fff;
-    text-align: center;
-    padding: 1em 2em; /* Adjust to suit */
-    margin: 2em auto 3em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
-}
-.ribbon:before, .ribbon:after {
-    content: "";
-    position: absolute;
-    display: block;
-    bottom: -1em;
-    border: 1.5em solid #986794;
-    z-index: -1;
-}
-.ribbon:before {
-    left: -2em;
-    border-right-width: 1.5em;
-    border-left-color: transparent;
-}
-.ribbon:after {
-    right: -2em;
-    border-left-width: 1.5em;
-    border-right-color: transparent;
-}
-.ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
-    content: "";
-    position: absolute;
-    display: block;
-    border-style: solid;
-    border-color: #804f7c transparent transparent transparent;
-    bottom: -1em;
-}
-.ribbon .ribbon-content:before {
-    left: 0;
-    border-width: 1em 0 0 1em;
-}
-.ribbon .ribbon-content:after {
-    right: 0;
-    border-width: 1em 1em 0 0;
-}
-
-.slide {
-    margin: 0 auto;
-    width: 100%;
-    padding: 15px 0;
-    padding: 8rem 0;
-    height: 35rem;
-}
-
-#facilities3 .slide{
-    padding: 15px 0;
-    padding: 8rem 0;
-    height: 45rem;
-}
-
-article {
-    background-color:rgba(255, 255, 255, 0.8);
-    border-bottom-left-radius:15px;
-    border-bottom-right-radius:15px;
-    border-top-left-radius:15px;
-    border-top-right-radius:15px;
-    float:right;
-    overflow-x:hidden;
-    overflow-y:hidden;
-    padding-bottom:25px;
-    padding-left:30px;
-    padding-right:30px;
-    padding-top:25px;
-    position:relative;
-    text-align:left;
-    width:350px;
-}
-
-#sociallinks{
-    padding-left: 30px;
-    text-align: center;
-}
-.icon{
-    border:none;
-    margin-right:30px;
-}
-
-.safe{
-    float:left;
-    margin:5px 15px 5px 0;
-    color:#6E6E6E;
-    font-size:12px;
-    letter-spacing: 2px;
-}
-
-.arrow-down {
-    width: 0;
-    height: 0;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-top: 20px solid #febe14;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.center {
-    text-align: center;
-}
-
-@font-face {
-    font-family: 'icomoon';
-    src:url('/static/font/icomoon/icomoon.eot');
-    src:url('/static/font/icomoon/icomoon.eot?#iefix') format('embedded-opentype'),
-    url('/static/font/icomoon/icomoon.svg#icomoon') format('svg'),
-    url('/static/font/icomoon/icomoon.woff') format('woff'),
-    url('/static/font/icomoon/icomoon.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* Use the following CSS code if you want to use data attributes for inserting your icons */
-[data-icon]:before {
-    font-family: 'icomoon';
-    content: attr(data-icon);
-    speak: none;
-    font-weight: normal;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-}
-
-/* Use the following CSS code if you want to have a class per icon */
-/*
-Instead of a list of all class selectors,
-you can use the generic selector below, but it's slower:
-[class*="icon-"]:before {
-*/
-.icon-Logo-Icon:before {
-    font-family: 'icomoon';
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-}
-.icon-Logo-Icon:before {
-    content: "\50";
-}
-
-.logoicon {
-    font-size: 10rem;
-}
-
-.notifications {
-    border-radius: 15px;
-    font-family: 'SubtleSansLight';
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-.brand {
-    font-family: SubtleSansRegular, sans-serif;
-    letter-spacing: 2px;
-    text-transform: lowercase;
-}
-
-.brand .light {
-    font-family: SubtleSansLight, sans-serif;
-}
-
-/*.navbar-inverse .brand {*/
-    /*color: white;*/
-/*}*/
-
-.navbar-inverse .brand, .navbar-inverse .nav>li>a {
-     color: white;
-}
-
-.navbar-inverse .brand:hover, .navbar-inverse .nav>li>a:hover {
-    color: #f15b41;
-}
-
 .price {
     font-size: 20px;
     letter-spacing: 2px;
@@ -486,6 +333,54 @@ you can use the generic selector below, but it's slower:
     text-align: left;
 }
 
+
+/*
+ * Facilities
+ */
+
+.facility-list {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.facility {
+    font-size: 20px;
+    letter-spacing: 5px;
+    line-height: 30px;
+    text-transform: uppercase;
+}
+
+.facility.large {
+    font-size: 36px;
+    letter-spacing: 5px;
+    line-height: 36px;
+}
+#facilities3 .slide{
+    padding: 15px 0;
+    padding: 8rem 0;
+    height: 45rem;
+}
+
+/*
+ * Location
+ */
+
+#map_canvas {
+    height: 500px;
+}
+
+
+
+
+
+
+
+
+
+/*
+ * Galleries
+ */
+
 #galleria{
     width: 900px;
     height: 600px;
@@ -494,21 +389,4 @@ you can use the generic selector below, but it's slower:
 
 .galleria-container{
     background:#febe14;
-}
-
-nav {
-    box-shadow: 0 1px 10px #000000;
-    position: absolute;
-    width: 100%;
-    z-index: 1;
-}
-
-nav.sticky {
-    position: fixed;
-    top: 0;
-    left: 0;
-}
-
-.navbar-inner {
-    background-color: black;
 }
