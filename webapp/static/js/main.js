@@ -11,8 +11,14 @@ $(function() {
 //        easing: 'easeInOutExpo'
 //    });
 //
-    Galleria.loadTheme('static/lib/galleria/themes/classic/galleria.classic.min.js');
-    Galleria.run('#galleria');
+//    Galleria.loadTheme('static/lib/galleria/themes/classic/galleria.classic.min.js');
+//    Galleria.run('#galleria');
+
+//    $(window).load(function() {
+        $('.flexslider').flexslider({
+            animation: "slide"
+        });
+//    });
 
     /*****************************************
      /* Sticky Nav and Nav Updating
