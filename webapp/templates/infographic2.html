@@ -21,6 +21,16 @@
 
 <body>
 
+<!--Include the JavaScript SDK-->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <section id="hero" class="background-orange slide">
   <!--<div class="logo center background-yellow">-->
     <!--<div class="logotype radiate-on-hover">PUN<span class="light">SPACE</span></div>-->
@@ -68,6 +78,8 @@
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#member-privilege">Member Privileges</a></li>
       </ul>
+      <div class="brand fb-like" data-href="http://www.punspace.com" data-send="false" data-width="225" data-show-faces="false" data-colorscheme="dark"></div>
+
       <!--<form class="navbar-form pull-right">-->
         <!--<input type="text" id="input-email" name="input-email" placeholder="Your email..." class="span2">-->
         <!--<button type="submit" id="subscribe" class="btn btn-danger" data-loading-text="Subscribing...">Subscribe</button>-->
