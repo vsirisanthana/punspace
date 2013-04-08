@@ -34,6 +34,14 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'PestoLight';
+    src: url('/static/font/pesto/Pesto-Light.eot');
+    src: local('â˜º'), url('/static/font/pesto/Pesto-Light.woff') format('woff'), url('/static/font/pesto/Pesto-Light.ttf') format('truetype'), url('/static/font/pesto/Pesto-Light.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 /*
  * Colors
@@ -89,10 +97,22 @@
 
 
 /*
+ * Languages
+ */
+.thai {
+    font-family: Pesto-Light, sans-serif;
+}
+
+
+/*
  * Helpers
  */
 .center {
     text-align: center;
+}
+
+.right {
+    text-align: right;
 }
 
 /*.radiate-on-hover {*/
@@ -188,29 +208,91 @@ nav.sticky {
     line-height: 1.2;
 }
 
+
+/*.logo {*/
+    /*padding-bottom: 8px;*/
+    /*margin-top: -100px;*/
+    /*padding-top: 80px;*/
+/*}*/
+
+
 .logo {
-    padding-bottom: 8px;
-    margin-top: -100px;
-    padding-top: 80px;
+    height: 110px;
+    width: 480px;
+    margin: 0 auto;
+    padding: 40px;
+    line-height: normal;
+}
+
+.logosymbol {
+    font-size: 110px;
+    float: left;
+    height: 110px;
+    text-align: center;
+    width: 110px;
 }
 
 .logotype {
-    font-family: SubtleSansRegular, sans-serif;
-    font-size: 72px;
-    letter-spacing: 1rem;
-    line-height: 1;
+    font-family: SubtleSansLight, sans-serif;
+    font-size: 56px;
+    float: left;
+    height: 56px;
+    letter-spacing: 15.5px;
+    line-height: 76px;
+    margin-top: 4px;
+    margin-left: 39px;
+    width: 330px;
+    text-align: left;
     text-transform: lowercase;
 }
 
-.logotype .light {
-    font-family: SubtleSansLight, sans-serif;
+.logotype strong {
+    font-family: SubtleSansRegular, sans-serif;
+    font-weight: normal;
 }
 
 .brandline {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 11px;
-    letter-spacing: .5rem;
+    font-size: 12px;
+    float: left;
+    height: 10px;
+    letter-spacing: 8px;
+    margin-left: 40px;
+    margin-top: 18px;
+    margin-bottom: 20px;
+    text-align: left;
+    width: 330px;
 }
+
+
+/*.logo-horizontal .logosymbol {*/
+    /*display: inline-block;*/
+    /*font-size: 9rem;*/
+/*}*/
+
+/*.logotext {*/
+    /*display: inline-block;*/
+/*}*/
+
+/*.logotype {*/
+    /*font-family: SubtleSansLight, sans-serif;*/
+    /*font-size: 72px;*/
+    /*letter-spacing: 1rem;*/
+    /*line-height: 1;*/
+    /*margin-bottom: 22px;*/
+    /*text-transform: lowercase;*/
+/*}*/
+
+/*.logotype strong {*/
+    /*font-family: SubtleSansRegular, sans-serif;*/
+    /*font-weight: normal;*/
+/*}*/
+
+/*.brandline {*/
+    /*font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
+    /*font-size: 12px;*/
+    /*letter-spacing: .5rem;*/
+/*}*/
 
 .brand {
     font-family: SubtleSansRegular, sans-serif;
@@ -389,4 +471,47 @@ td.regular-price {
 
 .galleria-container{
     background:#febe14;
+}
+
+
+/*
+ * Font icons
+ */
+@font-face {
+    font-family: 'icomoon';
+    src:url('/static/font/icomoon/icomoon.eot');
+    src:url('/static/font/icomoon/icomoon.eot?#iefix') format('embedded-opentype'),
+    url('/static/font/icomoon/icomoon.svg#icomoon') format('svg'),
+    url('/static/font/icomoon/icomoon.woff') format('woff'),
+    url('/static/font/icomoon/icomoon.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+    font-family: 'icomoon';
+    content: attr(data-icon);
+    speak: none;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"]:before {
+*/
+.icon-Logo-Icon:before {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+.icon-Logo-Icon:before {
+    content: "\50";
 }
