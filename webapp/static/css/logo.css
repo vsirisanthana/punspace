@@ -1,0 +1,245 @@
+/*
+ * Fonts
+ */
+
+@font-face {
+    font-family: 'SubtleSansRegular';
+    src: url('/static/font/subtlesans/SubtleSansRegular.eot');
+    src: local('â˜º'), url('/static/font/subtlesans/SubtleSansRegular.woff') format('woff'), url('/static/font/subtlesans/SubtleSansRegular.ttf') format('truetype'), url('/static/font/subtlesans/SubtleSansRegular.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SubtleSansLight';
+    src: url('/static/font/subtlesans/SubtleSansLight.eot');
+    src: local('â˜º'), url('/static/font/subtlesans/SubtleSansLight.woff') format('woff'), url('/static/font/subtlesans/SubtleSansLight.ttf') format('truetype'), url('/static/font/subtlesans/SubtleSansLight.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SubtleSansUltraLight';
+    src: url('/static/font/subtlesans/SubtleSansUltraLight.eot');
+    src: local('â˜º'), url('/static/font/subtlesans/SubtleSansUltraLight.woff') format('woff'), url('/static/font/subtlesans/SubtleSansUltraLight.ttf') format('truetype'), url('/static/font/subtlesans/SubtleSansUltraLight.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PestoRegular';
+    src: url('/static/font/pesto/Pesto-Regular.eot');
+    src: local('â˜º'), url('/static/font/pesto/Pesto-Regular.woff') format('woff'), url('/static/font/pesto/Pesto-Regular.ttf') format('truetype'), url('/static/font/pesto/Pesto-Regular.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PestoLight';
+    src: url('/static/font/pesto/Pesto-Light.eot');
+    src: local('â˜º'), url('/static/font/pesto/Pesto-Light.woff') format('woff'), url('/static/font/pesto/Pesto-Light.ttf') format('truetype'), url('/static/font/pesto/Pesto-Light.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RsuRegular';
+    src: url('/static/font/rsu/RSU_Regular.eot');
+    src: local('â˜º'), url('/static/font/rsu/RSU_Regular.woff') format('woff'), url('/static/font/rsu/RSU_Regular.ttf') format('truetype'), url('/static/font/rsu/RSU_Regular.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RsuLight';
+    src: url('/static/font/rsu/RSU_Light.eot');
+    src: local('â˜º'), url('/static/font/rsu/RSU_Light.woff') format('woff'), url('/static/font/rsu/RSU_Light.ttf') format('truetype'), url('/static/font/rsu/RSU_Light.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.orange {
+    color: #f15b41;
+}
+
+.green {
+    color: #00b59c;
+}
+
+.yellow {
+    color: #febe14;
+}
+
+.grey {
+    color: #828487;
+}
+
+.black {
+    color: black;
+}
+
+.white {
+    color: white;
+}
+
+
+.background-orange {
+    background-color: #f15b41;
+}
+
+.background-green {
+    background-color: #00b59c;
+}
+
+.background-yellow {
+    background-color: #febe14;
+}
+
+.background-grey {
+    background-color: #828487;
+}
+
+.background-black {
+    background-color: black;
+}
+
+.background-white {
+    background-color: white;
+}
+
+.logo {
+    height: 220px;
+    padding: 40px;
+    width: 330px;
+}
+
+.logosymbol {
+    font-size: 110px;
+    height: 110px;
+    line-height: 110px;
+    text-align: center;
+    width: 330px;
+}
+
+.logotype {
+    font-family: SubtleSansLight, Arial, sans-serif;
+    font-size: 56px;
+    height: 40px;
+    letter-spacing: 15px;
+    line-height: 35px;
+    margin-top: 40px;
+    text-align: center;
+    text-transform: lowercase;
+    width: 330px;
+}
+
+.logotype strong {
+    font-family: SubtleSansRegular, Arial, sans-serif;
+    font-weight: normal;
+}
+
+.brandline {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    height: 10px;
+    letter-spacing: 8px;
+    line-height: 10px;
+    margin-top: 20px;
+    text-align: center;
+    width: 330px;
+}
+
+.logo-horizontal {
+    height: 110px;
+    width: 480px;
+}
+
+.logo-horizontal .logosymbol {
+    float: left;
+    width: 110px;
+}
+
+.logo-horizontal .logotype {
+    float: left;
+    margin-top: 20px;
+    margin-left: 39px;
+    text-align: left;
+}
+
+.logo-horizontal .brandline {
+    float: left;
+    margin-left: 40px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.logo-thai .logotype {
+    font-family: PestoLight, Arial, sans-serif;
+    font-size: 97px;
+    letter-spacing: 5px;
+    line-height: 43px;
+}
+
+.logo-thai .logotype strong {
+    font-family: PestoRegular, Arial, sans-serif;
+    font-weight: normal;
+}
+
+.logo-thai .brandline {
+    font-family: RsuLight, Arial, sans-serif;
+    font-size: 18px;
+    letter-spacing: 3px;
+    line-height: 11px;
+}
+
+.logo-thai.logo-horizontal .logotype {
+    margin-left: 36px;
+}
+
+/*.clear-float{*/
+    /*clear: both;*/
+/*}*/
+
+
+/*
+ * Font icons
+ */
+@font-face {
+    font-family: 'icomoon';
+    src:url('/static/font/icomoon/icomoon.eot');
+    src:url('/static/font/icomoon/icomoon.eot?#iefix') format('embedded-opentype'),
+    url('/static/font/icomoon/icomoon.svg#icomoon') format('svg'),
+    url('/static/font/icomoon/icomoon.woff') format('woff'),
+    url('/static/font/icomoon/icomoon.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+    font-family: 'icomoon';
+    content: attr(data-icon);
+    speak: none;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"]:before {
+*/
+.icon-Logo-Icon:before {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+.icon-Logo-Icon:before {
+    content: "\50";
+}

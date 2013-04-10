@@ -221,7 +221,7 @@ nav.sticky {
     width: 480px;
     margin: 0 auto;
     padding: 40px;
-    line-height: normal;
+    line-height: 1;
 }
 
 .logosymbol {
