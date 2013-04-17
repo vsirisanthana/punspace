@@ -1,8 +1,28 @@
 @font-url: '/static/font';
+@kruengprung-font-url: '@{font-url}/kruengprung';
 @pesto-font-url: '@{font-url}/pesto';
 @rsu-font-url: '@{font-url}/rsu';
 @subtlesans-font-url: '@{font-url}/subtlesans';
 
+
+@font-face {
+  font-family: Kruengprung;
+  src: url('@{pesto-font-url}/kruengprung-italic-webfont.eot');
+  src: url('@{pesto-font-url}/kruengprung-italic-webfont.eot?#iefix') format('embedded-opentype'),
+       url('@{pesto-font-url}/kruengprung-italic-webfont.woff') format('woff'),
+       url('@{pesto-font-url}/kruengprung-italic-webfont.ttf') format('truetype'),
+       url('@{pesto-font-url}/kruengprung-italic-webfont.svg#kruengprungitalic') format('svg');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: Kruengprung;
+  src: url('@{pesto-font-url}/kruengprung-webfont.eot');
+  src: url('@{pesto-font-url}/kruengprung-webfont.eot?#iefix') format('embedded-opentype'),
+       url('@{pesto-font-url}/kruengprung-webfont.woff') format('woff'),
+       url('@{pesto-font-url}/kruengprung-webfont.ttf') format('truetype'),
+       url('@{pesto-font-url}/kruengprung-webfont.svg#kruengprungregular') format('svg');
+}
 
 @font-face {
   font-family: Pesto;
