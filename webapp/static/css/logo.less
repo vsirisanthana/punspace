@@ -3,22 +3,6 @@
  */
 
 @font-face {
-    font-family: 'RsuRegular';
-    src: url('/static/font/rsu/RSU_Regular.eot');
-    src: local('â˜º'), url('/static/font/rsu/RSU_Regular.woff') format('woff'), url('/static/font/rsu/RSU_Regular.ttf') format('truetype'), url('/static/font/rsu/RSU_Regular.svg') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'RsuLight';
-    src: url('/static/font/rsu/RSU_Light.eot');
-    src: local('â˜º'), url('/static/font/rsu/RSU_Light.woff') format('woff'), url('/static/font/rsu/RSU_Light.ttf') format('truetype'), url('/static/font/rsu/RSU_Light.svg') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
   font-family: 'ThaiSansNeueRegular';
   src: url('/static/font/thaisansneue/ThaiSansNeue-Regular.eot');
   src: local('â˜º'), url('/static/font/thaisansneue/ThaiSansNeue-Regular.woff') format('woff'), url('/static/font/thaisansneue/ThaiSansNeue-Regular.ttf') format('truetype'), url('/static/font/thaisansneue/ThaiSansNeue-Regular.svg') format('svg');
@@ -233,8 +217,9 @@
 }
 
 .logo-thai .brandline {
-    font-family: RsuLight, Arial, sans-serif;
+    font-family: RSU, Arial, sans-serif;
     font-size: (@X * 0.45);
+    font-weight: 200;
     letter-spacing: (@X * 0.075);
     line-height: (@X * 0.275);
 }
