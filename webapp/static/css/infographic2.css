@@ -89,10 +89,10 @@ nav.sticky {
  */
 
 .navbar .brand {
-    font-family: 'Subtle Sans', sans-serif;
-    font-weight: normal;
-    letter-spacing: 2px;
-    text-transform: lowercase;
+    /*font-family: 'Subtle Sans', sans-serif;*/
+    /*font-weight: normal;*/
+    /*letter-spacing: 2px;*/
+    /*text-transform: lowercase;*/
 }
 
 .brand .light {
