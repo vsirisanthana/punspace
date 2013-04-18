@@ -1,10 +1,17 @@
 @X: 40px;
 
 
-.logo {
-    height: (@X * 5.5);
-    padding: @X;
-    width: (@X * 8.25);
+.logo-horizontal, .logo-vertical {
+  padding: @X;
+}
+
+.logo-vertical {
+  height: (@X * 5.5);
+  width: (@X * 8.25);
+}
+
+.logo-vertical.logo-no-brandline {
+  height: (@X * 4.75);
 }
 
 .logosymbol {
@@ -64,6 +71,10 @@
     margin-left: @X;
     margin-bottom: (@X * 0.5);
     text-align: left;
+}
+
+.logo-horizontal.logo-no-brandline .logotype {
+  margin-top: (@X * 0.875);
 }
 
 .logo-thai .logotype {
