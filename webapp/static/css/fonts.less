@@ -1,5 +1,6 @@
 @font-url: '/static/font';
 @kruengprung-font-url: '@{font-url}/kruengprung';
+@icomoon-font-url: '@{font-url}/icomoon';
 @pesto-font-url: '@{font-url}/pesto';
 @rsu-font-url: '@{font-url}/rsu';
 @subtlesans-font-url: '@{font-url}/subtlesans';
@@ -23,6 +24,15 @@
        url('@{pesto-font-url}/kruengprung-webfont.woff') format('woff'),
        url('@{pesto-font-url}/kruengprung-webfont.ttf') format('truetype'),
        url('@{pesto-font-url}/kruengprung-webfont.svg#kruengprungregular') format('svg');
+}
+
+@font-face {
+  font-family: icomoon;
+  src: url('@{icomoon-font-url}/icomoon.eot');
+  src: url('@{icomoon-font-url}/icomoon.eot?#iefix') format('embedded-opentype'),
+       url('@{icomoon-font-url}/icomoon.svg#icomoon') format('svg'),
+       url('@{icomoon-font-url}/icomoon.woff') format('woff'),
+       url('@{icomoon-font-url}/icomoon.ttf') format('truetype');
 }
 
 @font-face {
