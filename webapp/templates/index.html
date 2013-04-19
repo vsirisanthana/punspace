@@ -1,40 +1,445 @@
 <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app ng-controller="AppCtrl">
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+<head>
+  <meta name="Description"
+        content="Pun Space is a coworking space in Chiang Mai, Thailand. Located 2 minutes from Nimman area."/>
+  <meta http-equiv="Content-Type" CONTENT="text/html; charset=utf-8"/>
+  <title>Coworking Space in Chiang Mai | Pun Space</title>
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <link rel="stylesheet" href="static/css/normalize.css">
+  <link rel="stylesheet" href="static/css/main.css">
+  <link rel="stylesheet" type="text/css" href="/static/lib/bootstrap/css/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="/static/lib/FlexSlider/flexslider.css"/>
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
+  <link rel="stylesheet/less" type="text/css" href="/static/css/common.less"/>
+  <link rel="stylesheet/less" type="text/css" href="/static/css/fonts.less"/>
+  <link rel="stylesheet" type="text/css" href="/static/css/logo.css"/>
+  <link rel="stylesheet" type="text/css" href="/static/css/styles.css"/>
+  <script src="static/js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
 
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+<body class="white">
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+<!--Include the JavaScript SDK-->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
-    </body>
+<section id="hero" class="background-orange slide">
+  <div class="container center">
+    <div class="row">
+      <div class="span12">
+        <div class="logo logo-horizontal block-center" style="font-size: 40px;">
+          <div class="logosymbol" aria-hidden="true" data-icon="P"></div>
+          <div class="logotype"><strong>PUN</strong>SPACE</div>
+          <div class="brandline">COWORKING CHIANG MAI</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span12">
+        <h2 class="" style="font-size: 30px; font-weight: 100">Looking for desk space in Chiang Mai with<br/>
+          <span class="yellow">reliable</span> Internet, <span class="yellow">comfortable</span> chairs, and <span class="yellow">quiet</span> environment?</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span12">
+        <h2><a class="btn btn-inverse btn-large" href="#pricing" style="font-size: 30px; font-weight: 100;">JOIN US</a></h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span12">
+        <h2 class="" style="font-size: 30px; font-weight: 100;"><span class="yellow">10%-OFF</span> until end of April</h2>
+      </div>
+    </div>
+  </div>
+  <!--<div id="email-submit" class="email-submit center">-->
+    <!--<span>Follow us on</span>-->
+    <!--<span id="sociallinks">-->
+      <!--<a href="http://www.facebook.com/punspace" target="_blank">-->
+        <!--<img class="icon" src="/static/images/facebook.png" title="Like Facebook Page"/>-->
+      <!--</a>-->
+      <!--<a href="http://twitter.com/punspace" target="_blank">-->
+        <!--<img class="icon" src="static/images/twitter.png" title="Follow Twitter"/>-->
+      <!--</a>-->
+      <!--<a href="mailto:contact@punspace.com">-->
+        <!--<img class="icon" src="static/images/email.png" title="Send Email"/>-->
+      <!--</a>-->
+    <!--</span>-->
+    <!--<span>or subscribe to our updates&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>-->
+    <!--<form class="form-inline">-->
+      <!--<input type="text" id="input-email" name="input-email" placeholder="Enter your email..." maxlength="50"/>-->
+      <!--<button id='subscribe' type="button" class="btn btn-danger" data-loading-text="Subscribing...">Subscribe</button>-->
+    <!--</form>-->
+  <!--</div>-->
+</section>
+
+<nav class="background-black">
+  <div class="container">
+    <div class="navbar navbar-inverse">
+      <a class="brand" href="#">
+          <span aria-hidden="true" data-icon="P" style="font-size: 26px; vertical-align: middle"></span>
+          <span class="logotype" style="font-size: 16px; margin-left: 10px;"><strong>pun</strong>space</span>
+      </a>
+      <ul class="nav">
+        <li><a href="#about-us">About Us</a></li>
+        <li><a href="#galleries">Galleries</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#member-privilege">Member Privileges</a></li>
+      </ul>
+      <div class="brand fb-like" data-href="http://www.punspace.com" data-send="false" data-width="225" data-show-faces="false" data-colorscheme="dark"></div>
+
+      <!--<form class="navbar-form pull-right">-->
+        <!--<input type="text" id="input-email" name="input-email" placeholder="Your email..." class="span2">-->
+        <!--<button type="submit" id="subscribe" class="btn btn-danger" data-loading-text="Subscribing...">Subscribe</button>-->
+      <!--</form>-->
+    </div>
+  </div>
+</nav>
+
+<section id="about-us" class="background-green slide">
+  <div class="container">
+    <h1 class="section-title">About Us</h1>
+    <div class="row">
+      <div class="span6">
+        <p class="lead">Pun Space is a new <strong class="yellow">coworking space</strong> in
+          <strong class="yellow">Chiang Mai</strong> (opening in March 2013), located 2 minutes from Nimman area.
+          "Pun" in Thai (ปัน) means "share". So Pun Space simply translates to "Shared Space".</p>
+          <p class="lead">We are open everyday 9am to 9pm</p>
+      </div>
+      <div class="span6">
+          <p class="lead">Pun Space is a fun, friendly and collaborative workspace. It’s not just a shared office but a
+              place where you can meet <strong class="yellow">new friends and business partners</strong>,
+              where you can <strong class="yellow">work comfortably</strong> without overstaying your welcome
+              like working in a coffee shop, a place where you can leave your laptop out without worrying.
+              Come come check out our space and become a part of our <strong class="yellow">community.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="galleries" class="background-yellow slide">
+  <div class="container">
+    <h1 class="section-title">Galleries</h1>
+    <!--<div id="galleria">-->
+      <!--<img src="/static/images/gallery/green_space.jpg" data-title="Soft green grass" data-description="Soft green grass outside of Pun Space">-->
+      <!--<img src="/static/images/gallery/cowork_monday.jpg" data-title="coworking is the best" data-description="coworking is the best">-->
+      <!--<img src="/static/images/gallery/cowork_monday2.jpg" data-title="coworking is the best" data-description="coworking is the best">-->
+      <!--<img src="/static/images/gallery/punspace_logo.jpg" data-title="We're Pun Space" data-description="Pun Space parking">-->
+      <!--<img src="/static/images/gallery/office_life.jpg" data-title="Let's work" data-description="Pun is Sharing">-->
+      <!--<img src="/static/images/gallery/night_space1.jpg" data-title="Night at Pun Space" data-description="Cowork is fun">-->
+    <!--</div>-->
+    <div class="flexslider">
+      <ul class="slides">
+        <li>
+          <img src="/static/images/gallery/green_space.jpg" />
+        </li>
+        <!--<li>-->
+          <!--<img src="/static/images/gallery/cowork_monday.jpg" />-->
+        <!--</li>-->
+        <li>
+          <img src="/static/images/gallery/cowork_monday2.jpg" />
+        </li>
+        <!--<li>-->
+          <!--<img src="/static/images/gallery/punspace_logo.jpg" />-->
+        <!--</li>-->
+        <!--<li>-->
+          <!--<img src="/static/images/gallery/office_life.jpg" />-->
+        <!--</li>-->
+        <li>
+          <img src="/static/images/gallery/night_space1.jpg" />
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="amenities" class="background-grey slide">
+  <div class="container">
+    <h1 class="section-title">Amenities</h1>
+
+    <div class="row">
+      <ul class="facility-list yellow">
+        <li class="facility"><span class="facility large">28</span> hot seats<span class="pull-right">Meeting room with <span
+            class="facility large">big-screen TV</span></span></li>
+        <li class="facility">High-speed, <span class="facility large">reliable</span> WIFI<span class="pull-right">Private offices</span>
+        </li>
+        <li class="facility"><span class="facility large">Comfortable</span> chairs<span class="pull-right"></span>
+        </li>
+        <li class="facility">Printer, scanner, copier, fax machine</li>
+        <li class="facility large">Phone booth</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="location" class="background-yellow slide">
+  <div class="container">
+    <h1 class="section-title">Location <span class="muted">2 mins from Nimman</span></h1>
+    <p>14 Siri Mangkalajarn Lane 11, 2br office centre</p>
+    <div id="map_canvas"></div>
+    <form class="form-inline">
+      <span>Show: </span>
+      <label class="checkbox" ng-repeat="placeType in placeTypes">
+        <input type="checkbox" ng-model="markerFilters[placeType[0]]"> {{ placeType[1] }} &nbsp;
+      </label>
+    </form>
+  </div>
+</section>
+
+<section id="pricing" class="background-green slide">
+  <div class="container">
+    <h1 class="section-title">Pricing</h1>
+
+    <h2 class="section-subtitle">Passes (Non-member)</h2>
+    <table class="price-table table table-bordered">
+      <thead>
+        <tr>
+          <th class="table-header">Day pass</th>
+          <!--<th class="table-header">Week pass</th>-->
+          <th class="table-header">Flexi 10 days<br/>(valid 30 days)</th>
+          <th class="table-header">Flexi 20 days<br/>(valid 60 days)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="yellow price">&#x0E3F;{{ prices['day-pass']*.9 | number:0 }}*</td>
+          <!--<td class="yellow price">&#x0E3F;{{ prices['week-pass']*.9 | number:0 }}*</td>-->
+          <td class="yellow price">&#x0E3F;{{ prices['flexi']['10']*.9 | number:0 }}*</td>
+          <td class="yellow price">&#x0E3F;{{ prices['flexi']['20']*.9 | number:0 }}*</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-subtitle">Membership</h2>
+    <table class="price-table table table-bordered">
+      <thead>
+        <tr>
+          <th class="table-header">Monthly</th>
+          <th class="table-header">Quarterly</th>
+          <th class="table-header">Half-yearly</th>
+          <th class="table-header">Yearly</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="yellow price">&#x0E3F;{{ prices['member']['monthly']*.9 | number:0 }}*</td>
+          <td class="yellow price">&#x0E3F;{{ prices['member']['quarterly']*.9 | number:0 }}*</td>
+          <td class="yellow price">&#x0E3F;{{ prices['member']['half-yearly']*.9 | number:0 }}*</td>
+          <td class="yellow price">&#x0E3F;{{ prices['member']['yearly']*.9 | number:0 }}*</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-subtitle">Private office</h2>
+    <table class="price-table table table-bordered">
+      <thead>
+        <tr>
+          <th class="table-header"></th>
+          <th class="table-header">Weekly</th>
+          <th class="table-header">Monthly</th>
+          <th class="table-header">Quarterly</th>
+          <th class="table-header">Half-yearly</th>
+          <th class="table-header">Yearly</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="price-package">Large (includes 3 memberships)</td>
+        <td class="yellow price">&#x0E3F;{{ getPrivateOfficePlusMembershipPrice('large-office', 3, 'weekly')*.9 | number:0 }}*</td>
+        <td class="yellow price">&#x0E3F;{{ getPrivateOfficePlusMembershipPrice('large-office', 3, 'monthly')*.9 | number:0 }}*</td>
+        <td class="yellow price">&#x0E3F;{{ getPrivateOfficePlusMembershipPrice('large-office', 3, 'quarterly')*.9 | number:0 }}*</td>
+        <td class="yellow price">&#x0E3F;{{ getPrivateOfficePlusMembershipPrice('large-office', 3, 'half-yearly')*.9 | number:0 }}*</td>
+        <td class="yellow price">&#x0E3F;{{ getPrivateOfficePlusMembershipPrice('large-office', 3, 'yearly')*.9 | number:0 }}*</td>
+      </tr>
+      <tr>
+        <td class="price-package">Small (includes 2 memberships)</td>
+        <td class="yellow price">&#x0E3F;{{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'weekly')*.9 | number:0 }}*</td>
+        <td class="yellow price">&#x0E3F;{{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'monthly')*.9 | number:0 }}*</td>
+        <td class="yellow price">&#x0E3F;{{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'quarterly')*.9 | number:0 }}*</td>
+        <td class="yellow price">&#x0E3F;{{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'half-yearly')*.9 | number:0 }}*</td>
+        <td class="yellow price">&#x0E3F;{{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'yearly')*.9 | number:0 }}*</td>
+      </tr>
+      </tbody>
+    </table>
+
+
+      </tbody>
+    </table>
+    <div class="row">
+      <div class="span12">
+        <p class="footnote yellow">* These introductory rates are valid until April 30th, 2013</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing02" class="background-grey slide">
+  <div class="container">
+    <h1 class="section-title">Pricing (cont.)</h1>
+
+    <h2 class="section-subtitle">Meeting room (max 8 persons)</h2>
+    <table class="price-table table table-bordered">
+      <thead>
+      <tr>
+        <!--<th class="table-header" rowspan="2"></th>-->
+        <th class="table-header" colspan="2">Hourly</th>
+        <th class="table-header" colspan="2">Half day (4 hrs)</th>
+        <th class="table-header" colspan="2">Full day (8 hrs)</th>
+      </tr>
+      <tr>
+        <th class="table-header">Member</th>
+        <th class="table-header">Non-member</th>
+        <th class="table-header">Member</th>
+        <th class="table-header">Non-member</th>
+        <th class="table-header">Member</th>
+        <th class="table-header">Non-member</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <!--<td class="price-package">Large (max 8 persons)</td>-->
+        <td class="yellow">&#x0E3F;{{ prices['meeting']['hourly'] | number:0 }}</td>
+        <td>&#x0E3F;{{ prices['meeting']['hourly']*3 | number:0 }}</td>
+        <td class="yellow">&#x0E3F;{{ prices['meeting']['half-day'] | number:0 }}</td>
+        <td>&#x0E3F;{{ prices['meeting']['half-day']*3 | number:0 }}</td>
+        <td class="yellow">&#x0E3F;{{ prices['meeting']['full-day'] | number:0 }}</td>
+        <td>&#x0E3F;{{ prices['meeting']['full-day']*3 | number:0 }}</td>
+      </tr>
+      <!--<tr>-->
+        <!--<td class="price-package">Small (max 4 persons)</td>-->
+        <!--<td class="yellow">&#x0E3F;{{ prices['meeting']['hourly']*.5 | number:0 }}</td>-->
+        <!--<td>&#x0E3F;{{ prices['meeting']['hourly']*.5*3 | number:0 }}</td>-->
+        <!--<td class="yellow">&#x0E3F;{{ prices['meeting']['half-day']*.5 | number:0 }}</td>-->
+        <!--<td>&#x0E3F;{{ prices['meeting']['half-day']*.5*3 | number:0 }}</td>-->
+        <!--<td class="yellow">&#x0E3F;{{ prices['meeting']['full-day']*.5 | number:0 }}</td>-->
+        <!--<td>&#x0E3F;{{ prices['meeting']['full-day']*.5*3 | number:0 }}</td>-->
+      <!--</tr>-->
+      </tbody>
+    </table>
+  </div>
+</section>
+<section id="member-privilege" class="background-yellow slide">
+    <div class="container">
+        <h1 class="section-title">Member Privileges<span class="muted"></span></h1>
+        <table id="privilege" class="table">
+            <thead>
+                <tr>
+                    <th class="table-header"></th>
+                    <th class="table-header">Day Pass</th>
+                    <th class="table-header">Flex Cards</th>
+                    <th class="table-header">Monthly</th>
+                    <th class="table-header">Quarterly</th>
+                    <th class="table-header">Half-yearly</th>
+                    <th class="table-header">Yearly</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>High Speed Internet</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td>Fax, Printer, Scanner Service</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td>24/7 Access</td>
+                <td>✘</td>
+                <td>✘</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td>Free Guest Visit</td>
+                <td>✘</td>
+                <td>✘</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td>Meeting room hrs</td>
+                <td>✘</td>
+                <td>✘</td>
+                <td>✔</td>
+                <td>Free 1hr/month</td>
+                <td>Free 2hr/month</td>
+                <td>Free 4hr/month</td>
+            </tr>
+            <tr>
+                <td>Audio Visual equipments</td>
+                <td>✘</td>
+                <td>✘</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td>Locker</td>
+                <td>✘</td>
+                <td>✘</td>
+                <td>✘</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td>Water, Coffee, Snacks</td>
+                <td>Free</td>
+                <td>Free</td>
+                <td>Free</td>
+                <td>Free</td>
+                <td>Free</td>
+                <td>Free</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<script src="/static/lib/less/less-1.3.3.min.js" type="text/javascript"></script>
+<script type="text/javascript"
+        src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBf9_6dgjtdzdn1lqYPWn209VPUN6Kv040&sensor=false">
+</script>
+<script type="text/javascript" src="/static/js/vendor/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/static/lib/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/lib/angular/angular.min.js"></script>
+<!--<script type="text/javascript" src="/static/lib/galleria/galleria-1.2.9.min.js"></script>-->
+<script type="text/javascript" src="static/lib/FlexSlider/jquery.flexslider-min.js"></script>
+<script type="text/javascript" src="/static/js/controller.js"></script>
+<script src="static/js/plugins.js"></script>
+<script src="static/js/main.js"></script>
+<script type="text/javascript">
+  setTimeout(function(){var a=document.createElement("script");
+    var b=document.getElementsByTagName("script")[0];
+    a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0016/2172.js?"+Math.floor(new Date().getTime()/3600000);
+    a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+</body>
 </html>
