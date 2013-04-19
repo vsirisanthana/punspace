@@ -71,6 +71,16 @@ function AppCtrl($scope) {
         title: 'Pun Space',
         icon: '/static/images/map_marker.png'
     });
+    $scope.infoWindow = new google.maps.InfoWindow({
+        content: '<p class="black">Pun Space</p>'
+    });
+    $scope.activeInfoWindow = $scope.infoWindow;
+
+    google.maps.event.addListener($scope.marker, 'click', function() {
+        $scope.activeInfoWindow.close();
+        $scope.infoWindow.open($scope.map, $scope.marker);
+        $scope.activeInfoWindow = $scope.infoWindow;
+    });
     $scope.marker.setMap($scope.map);
 //    $scope.marker.setAnimation(google.maps.Animation.BOUNCE);
 //    google.maps.event.addListener($scope.marker, 'mouseover', function() {
@@ -153,7 +163,15 @@ function AppCtrl($scope) {
                         position: new google.maps.LatLng(lat, lng),
                         title: place[0],
                         icon: $scope.getMarkerIconPath(type)
+                    }),
+                    infoWindow = new google.maps.InfoWindow({
+                        content: '<p class="black">' + place[0] + '</p>'
                     });
+                google.maps.event.addListener(marker, 'click', function() {
+                    $scope.activeInfoWindow.close();
+                    infoWindow.open($scope.map, marker);
+                    $scope.activeInfoWindow = infoWindow;
+                });
                 $scope.markers[type].push(marker);
                 marker.setMap($scope.map);
             });
