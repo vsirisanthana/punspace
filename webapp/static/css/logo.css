@@ -1,220 +1,141 @@
 /*
- * Fonts
+ * Individual logo elements
  */
 
-@font-face {
-    font-family: 'SubtleSansRegular';
-    src: url('/static/font/subtlesans/SubtleSansRegular.eot');
-    src: local('â˜º'), url('/static/font/subtlesans/SubtleSansRegular.woff') format('woff'), url('/static/font/subtlesans/SubtleSansRegular.ttf') format('truetype'), url('/static/font/subtlesans/SubtleSansRegular.svg') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SubtleSansLight';
-    src: url('/static/font/subtlesans/SubtleSansLight.eot');
-    src: local('â˜º'), url('/static/font/subtlesans/SubtleSansLight.woff') format('woff'), url('/static/font/subtlesans/SubtleSansLight.ttf') format('truetype'), url('/static/font/subtlesans/SubtleSansLight.svg') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SubtleSansUltraLight';
-    src: url('/static/font/subtlesans/SubtleSansUltraLight.eot');
-    src: local('â˜º'), url('/static/font/subtlesans/SubtleSansUltraLight.woff') format('woff'), url('/static/font/subtlesans/SubtleSansUltraLight.ttf') format('truetype'), url('/static/font/subtlesans/SubtleSansUltraLight.svg') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'PestoRegular';
-    src: url('/static/font/pesto/Pesto-Regular.eot');
-    src: local('â˜º'), url('/static/font/pesto/Pesto-Regular.woff') format('woff'), url('/static/font/pesto/Pesto-Regular.ttf') format('truetype'), url('/static/font/pesto/Pesto-Regular.svg') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'PestoLight';
-    src: url('/static/font/pesto/Pesto-Light.eot');
-    src: local('â˜º'), url('/static/font/pesto/Pesto-Light.woff') format('woff'), url('/static/font/pesto/Pesto-Light.ttf') format('truetype'), url('/static/font/pesto/Pesto-Light.svg') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'RsuRegular';
-    src: url('/static/font/rsu/RSU_Regular.eot');
-    src: local('â˜º'), url('/static/font/rsu/RSU_Regular.woff') format('woff'), url('/static/font/rsu/RSU_Regular.ttf') format('truetype'), url('/static/font/rsu/RSU_Regular.svg') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'RsuLight';
-    src: url('/static/font/rsu/RSU_Light.eot');
-    src: local('â˜º'), url('/static/font/rsu/RSU_Light.woff') format('woff'), url('/static/font/rsu/RSU_Light.ttf') format('truetype'), url('/static/font/rsu/RSU_Light.svg') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-
-.orange {
-    color: #f15b41;
-}
-
-.green {
-    color: #00b59c;
-}
-
-.yellow {
-    color: #febe14;
-}
-
-.grey {
-    color: #828487;
-}
-
-.black {
-    color: black;
-}
-
-.white {
-    color: white;
-}
-
-
-.background-orange {
-    background-color: #f15b41;
-}
-
-.background-green {
-    background-color: #00b59c;
-}
-
-.background-yellow {
-    background-color: #febe14;
-}
-
-.background-grey {
-    background-color: #828487;
-}
-
-.background-black {
-    background-color: black;
-}
-
-.background-white {
-    background-color: white;
-}
-
-.logo {
-    height: 220px;
-    padding: 40px;
-    width: 330px;
-}
-
-.logosymbol {
-    font-size: 110px;
-    height: 110px;
-    line-height: 110px;
-    text-align: center;
-    width: 330px;
-}
-
 .logotype {
-    font-family: SubtleSansLight, Arial, sans-serif;
-    font-size: 56px;
-    height: 40px;
-    letter-spacing: 15px;
-    line-height: 35px;
-    margin-top: 40px;
-    text-align: center;
-    text-transform: lowercase;
-    width: 330px;
+  font-family: "Subtle Sans", Arial, sans-serif;
+  font-weight: 100;
+  letter-spacing: .26785714285em;   /* (.375 / 1.4) */
+  text-transform: lowercase;
 }
 
 .logotype strong {
-    font-family: SubtleSansRegular, Arial, sans-serif;
-    font-weight: normal;
+  font-weight: normal;
 }
 
 .brandline {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 12px;
-    height: 10px;
-    letter-spacing: 8px;
-    line-height: 10px;
-    margin-top: 20px;
-    text-align: center;
-    width: 330px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 200;
+  letter-spacing: .66666666666em;   /* (.2 / .3) */
 }
 
-.logo-horizontal {
-    height: 110px;
-    width: 480px;
+.logotype.logotype-thai {
+  font-family: Pesto, Arial, sans-serif;
+  font-weight: 200;
+  letter-spacing: 0.05154639175em;  /* (.125 / 2.425) */
 }
 
-.logo-horizontal .logosymbol {
-    float: left;
-    width: 110px;
+.logotype.logotype-thai strong {
+  font-weight: normal;
 }
 
-.logo-horizontal .logotype {
-    float: left;
-    margin-top: 20px;
-    margin-left: 39px;
-    text-align: left;
+.brandline.brandline-thai {
+  font-family: RSU, Arial, sans-serif;
+  font-weight: 200;
+  letter-spacing: 0.16666666666em;  /* (.075 / .45) */
 }
-
-.logo-horizontal .brandline {
-    float: left;
-    margin-left: 40px;
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-.logo-thai .logotype {
-    font-family: PestoLight, Arial, sans-serif;
-    font-size: 97px;
-    letter-spacing: 5px;
-    line-height: 43px;
-}
-
-.logo-thai .logotype strong {
-    font-family: PestoRegular, Arial, sans-serif;
-    font-weight: normal;
-}
-
-.logo-thai .brandline {
-    font-family: RsuLight, Arial, sans-serif;
-    font-size: 18px;
-    letter-spacing: 3px;
-    line-height: 11px;
-}
-
-.logo-thai.logo-horizontal .logotype {
-    margin-left: 36px;
-}
-
-/*.clear-float{*/
-    /*clear: both;*/
-/*}*/
 
 
 /*
- * Font icons
+ * Vertical logo (default)
  */
-@font-face {
-    font-family: 'icomoon';
-    src:url('/static/font/icomoon/icomoon.eot');
-    src:url('/static/font/icomoon/icomoon.eot?#iefix') format('embedded-opentype'),
-    url('/static/font/icomoon/icomoon.svg#icomoon') format('svg'),
-    url('/static/font/icomoon/icomoon.woff') format('woff'),
-    url('/static/font/icomoon/icomoon.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+
+.logo {
+  height: 5.5em;
+  padding: 1em;
+  width: 8.25em;
 }
+
+.logo .logosymbol {
+  font-size: 2.75em;
+  height: 50%;
+  text-align: center;
+  width: 100%;
+}
+
+.logo .logotype {
+  font-size: 1.4em;
+  height: 18.181818181%;        /* (1 / 5.5) */
+  line-height: .625em;          /* (.875 / 1.4) */
+  margin-top: 12.121212121%;    /* (1 / 8.25) */
+  text-align: center;
+  width: 100%;
+}
+
+.logo .brandline {
+  font-size: 0.3em;
+  height: 4.545454545%;         /* (.25 / 5.5) */
+  line-height: 0.83333333333em; /* (.25 / .3) */
+  margin-top: 6.06060606%;      /* (.5 / 8.25) */
+  text-align: center;
+  width: 100%;
+}
+
+.logo .logotype.logotype-thai {
+  font-size: 2.425em;
+  line-height: 0.44329896907em; /* (1.075 / 2.425) */
+}
+
+.logo .brandline.brandline-thai {
+  font-size: 0.45em;
+  line-height: 0.61111111111em; /* (.275 / .45) */
+}
+
+.logo.logo-no-brandline {
+  height: 4.75em;
+}
+
+.logo.logo-no-brandline .logosymbol {
+  height: 57.894736842%;        /* (2.75 / 4.75) */
+}
+
+.logo.logo-no-brandline .logotype {
+  height: 21.052631578%;        /* (1 / 4.75) */
+}
+
+
+/*
+ * Horizontal logo
+ */
+
+.logo.logo-horizontal {
+  height: 2.75em;
+  width: 12em;
+}
+
+.logo.logo-horizontal .logosymbol {
+  float: left;
+  height: 100%;
+  width: 22.916666666%;         /* (2.75 / 12) */
+}
+
+.logo.logo-horizontal .logotype {
+  float: left;
+  height: 36.363636363%;        /* (1 / 2.75) */
+  margin-left: 8.125%;          /* (0.975 / 12) */
+  margin-top: 4.166666666%;     /* (.5 / 12) */
+  text-align: left;
+  width: 68.75%;                /* (8.25 / 12) */
+}
+
+.logo.logo-horizontal .brandline {
+  float: left;
+  height: 9.09090909%;          /* (.25 / 2.75) */
+  margin-bottom: 4.166666666%;  /* (.5 / 12) */
+  margin-left: 8.333333333%;    /* (1 / 12) */
+  margin-top: 4.166666666%;     /* (.5 / 12) */
+  text-align: left;
+  width: 68.75%;                /* (8.25 / 12) */
+}
+
+.logo.logo-horizontal .logotype.logotype-thai {
+  margin-left: 7.5%;            /* (.9 / 12) */
+}
+
+.logo.logo-horizontal.logo-no-brandline .logotype {
+  margin-top: 7.291666666%;     /* (.875 / 12) */
+}
+
 
 /* Use the following CSS code if you want to use data attributes for inserting your icons */
 [data-icon]:before {
