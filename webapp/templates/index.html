@@ -335,11 +335,11 @@
   <div class="container">
     <h1 class="section-title">Pricing (cont.)</h1>
 
-    <h2 class="section-subtitle">Meeting room (max 8 persons)</h2>
+    <h2 class="section-subtitle">Meeting room</h2>
     <table class="price-table table table-bordered">
       <thead>
       <tr>
-        <!--<th class="table-header" rowspan="2"></th>-->
+        <th class="table-header" rowspan="2"></th>
         <th class="table-header" colspan="2">Hourly</th>
         <th class="table-header" colspan="2">Half day (4 hrs)</th>
         <th class="table-header" colspan="2">Full day (8 hrs)</th>
@@ -355,7 +355,7 @@
       </thead>
       <tbody>
       <tr>
-        <!--<td class="price-package">Large (max 8 persons)</td>-->
+        <td class="price-package">Large (max 8 persons)</td>
         <td class="yellow">&#x0E3F;{{ prices['meeting']['hourly'] | number:0 }}</td>
         <td>&#x0E3F;{{ prices['meeting']['hourly']*3 | number:0 }}</td>
         <td class="yellow">&#x0E3F;{{ prices['meeting']['half-day'] | number:0 }}</td>
@@ -363,15 +363,15 @@
         <td class="yellow">&#x0E3F;{{ prices['meeting']['full-day'] | number:0 }}</td>
         <td>&#x0E3F;{{ prices['meeting']['full-day']*3 | number:0 }}</td>
       </tr>
-      <!--<tr>-->
-        <!--<td class="price-package">Small (max 4 persons)</td>-->
-        <!--<td class="yellow">&#x0E3F;{{ prices['meeting']['hourly']*.5 | number:0 }}</td>-->
-        <!--<td>&#x0E3F;{{ prices['meeting']['hourly']*.5*3 | number:0 }}</td>-->
-        <!--<td class="yellow">&#x0E3F;{{ prices['meeting']['half-day']*.5 | number:0 }}</td>-->
-        <!--<td>&#x0E3F;{{ prices['meeting']['half-day']*.5*3 | number:0 }}</td>-->
-        <!--<td class="yellow">&#x0E3F;{{ prices['meeting']['full-day']*.5 | number:0 }}</td>-->
-        <!--<td>&#x0E3F;{{ prices['meeting']['full-day']*.5*3 | number:0 }}</td>-->
-      <!--</tr>-->
+      <tr>
+        <td class="price-package">Small (max 4 persons)</td>
+        <td class="yellow">&#x0E3F;{{ prices['meeting']['hourly']*.5 | number:0 }}</td>
+        <td>&#x0E3F;{{ prices['meeting']['hourly']*.5*3 | number:0 }}</td>
+        <td class="yellow">&#x0E3F;{{ prices['meeting']['half-day']*.5 | number:0 }}</td>
+        <td>&#x0E3F;{{ prices['meeting']['half-day']*.5*3 | number:0 }}</td>
+        <td class="yellow">&#x0E3F;{{ prices['meeting']['full-day']*.5 | number:0 }}</td>
+        <td>&#x0E3F;{{ prices['meeting']['full-day']*.5*3 | number:0 }}</td>
+      </tr>
       </tbody>
     </table>
   </div>
