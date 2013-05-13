@@ -21,6 +21,17 @@
     max-width: 30px;
 }
 
+.thai {
+  font-family: 'Pesto', Arial, sans-serif;
+}
+
+.thai-p {
+  font-family: 'ThaiSans Neue', Arial, sans-serif;
+  font-size: 26px;
+  font-weight: 100;
+  letter-spacing: 1px;
+  line-height: 1;
+}
 
 /*
  * Default HTML element styles
