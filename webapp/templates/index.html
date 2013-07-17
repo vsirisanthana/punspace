@@ -286,10 +286,10 @@
       </thead>
       <tbody>
         <tr>
-          <td class="price">&#x0E3F;{{ prices['day-pass'] | number:0 }}</td>
-          <!--<td class="yellow price">&#x0E3F;{{ prices['week-pass'] | number:0 }}*</td>-->
-          <td class="price">&#x0E3F;{{ prices['flexi']['10'] | number:0 }}</td>
-          <td class="price">&#x0E3F;{{ prices['flexi']['20'] | number:0 }}</td>
+          <td class="price">THB {{ prices['day-pass'] | number:0 }}</td>
+          <!--<td class="yellow price">THB {{ prices['week-pass'] | number:0 }}*</td>-->
+          <td class="price">THB {{ prices['flexi']['10'] | number:0 }}</td>
+          <td class="price">THB {{ prices['flexi']['20'] | number:0 }}</td>
         </tr>
       </tbody>
     </table>
@@ -306,10 +306,10 @@
       </thead>
       <tbody>
         <tr>
-          <td class="price">&#x0E3F;{{ prices['member']['monthly'] | number:0 }}</td>
-          <td class="price">&#x0E3F;{{ prices['member']['quarterly'] | number:0 }}</td>
-          <td class="price">&#x0E3F;{{ prices['member']['half-yearly'] | number:0 }}</td>
-          <td class="price">&#x0E3F;{{ prices['member']['yearly'] | number:0 }}</td>
+          <td class="price">THB {{ prices['member']['monthly'] | number:0 }}</td>
+          <td class="price">THB {{ prices['member']['quarterly'] | number:0 }}</td>
+          <td class="price">THB {{ prices['member']['half-yearly'] | number:0 }}</td>
+          <td class="price">THB {{ prices['member']['yearly'] | number:0 }}</td>
         </tr>
       </tbody>
     </table>
@@ -329,19 +329,19 @@
       <tbody>
       <tr>
         <td class="price-package">Large (includes 3 memberships)</td>
-        <td class="price">&#x0E3F;{{ getPrivateOfficePlusMembershipPrice('large-office', 3, 'weekly') | number:0 }}</td>
-        <td class="price">&#x0E3F;{{ getPrivateOfficePlusMembershipPrice('large-office', 3, 'monthly') | number:0 }}</td>
-        <td class="price">&#x0E3F;{{ getPrivateOfficePlusMembershipPrice('large-office', 3, 'quarterly') | number:0 }}</td>
-        <td class="price">&#x0E3F;{{ getPrivateOfficePlusMembershipPrice('large-office', 3, 'half-yearly') | number:0 }}</td>
-        <td class="price">&#x0E3F;{{ getPrivateOfficePlusMembershipPrice('large-office', 3, 'yearly') | number:0 }}</td>
+        <td class="price">THB {{ getPrivateOfficePlusMembershipPrice('large-office', 3, 'weekly') | number:0 }}</td>
+        <td class="price">THB {{ getPrivateOfficePlusMembershipPrice('large-office', 3, 'monthly') | number:0 }}</td>
+        <td class="price">THB {{ getPrivateOfficePlusMembershipPrice('large-office', 3, 'quarterly') | number:0 }}</td>
+        <td class="price">THB {{ getPrivateOfficePlusMembershipPrice('large-office', 3, 'half-yearly') | number:0 }}</td>
+        <td class="price">THB {{ getPrivateOfficePlusMembershipPrice('large-office', 3, 'yearly') | number:0 }}</td>
       </tr>
       <tr>
         <td class="price-package">Small (includes 2 memberships)</td>
-        <td class="price">&#x0E3F;{{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'weekly') | number:0 }}</td>
-        <td class="price">&#x0E3F;{{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'monthly') | number:0 }}</td>
-        <td class="price">&#x0E3F;{{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'quarterly') | number:0 }}</td>
-        <td class="price">&#x0E3F;{{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'half-yearly') | number:0 }}</td>
-        <td class="price">&#x0E3F;{{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'yearly') | number:0 }}</td>
+        <td class="price">THB {{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'weekly') | number:0 }}</td>
+        <td class="price">THB {{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'monthly') | number:0 }}</td>
+        <td class="price">THB {{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'quarterly') | number:0 }}</td>
+        <td class="price">THB {{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'half-yearly') | number:0 }}</td>
+        <td class="price">THB {{ getPrivateOfficePlusMembershipPrice('small-office', 2, 'yearly') | number:0 }}</td>
       </tr>
       </tbody>
     </table>
@@ -367,28 +367,29 @@
       <tbody>
       <tr>
         <td class="price-package">Large (max 8 persons)</td>
-        <td class="yellow">&#x0E3F;{{ prices['meeting']['hourly'] | number:0 }}</td>
-        <td>&#x0E3F;{{ prices['meeting']['hourly']*3 | number:0 }}</td>
-        <td class="yellow">&#x0E3F;{{ prices['meeting']['half-day'] | number:0 }}</td>
-        <td>&#x0E3F;{{ prices['meeting']['half-day']*3 | number:0 }}</td>
-        <td class="yellow">&#x0E3F;{{ prices['meeting']['full-day'] | number:0 }}</td>
-        <td>&#x0E3F;{{ prices['meeting']['full-day']*3 | number:0 }}</td>
+        <td class="yellow">THB {{ prices['meeting']['hourly'] | number:0 }}</td>
+        <td>THB {{ prices['meeting']['hourly']*3 | number:0 }}</td>
+        <td class="yellow">THB {{ prices['meeting']['half-day'] | number:0 }}</td>
+        <td>THB {{ prices['meeting']['half-day']*3 | number:0 }}</td>
+        <td class="yellow">THB {{ prices['meeting']['full-day'] | number:0 }}</td>
+        <td>THB {{ prices['meeting']['full-day']*3 | number:0 }}</td>
       </tr>
       <tr>
         <td class="price-package">Small (max 4 persons)</td>
-        <td class="yellow">&#x0E3F;{{ prices['meeting']['hourly']*.5 | number:0 }}</td>
-        <td>&#x0E3F;{{ prices['meeting']['hourly']*.5*3 | number:0 }}</td>
-        <td class="yellow">&#x0E3F;{{ prices['meeting']['half-day']*.5 | number:0 }}</td>
-        <td>&#x0E3F;{{ prices['meeting']['half-day']*.5*3 | number:0 }}</td>
-        <td class="yellow">&#x0E3F;{{ prices['meeting']['full-day']*.5 | number:0 }}</td>
-        <td>&#x0E3F;{{ prices['meeting']['full-day']*.5*3 | number:0 }}</td>
+        <td class="yellow">THB {{ prices['meeting']['hourly']*.5 | number:0 }}</td>
+        <td>THB {{ prices['meeting']['hourly']*.5*3 | number:0 }}</td>
+        <td class="yellow">THB {{ prices['meeting']['half-day']*.5 | number:0 }}</td>
+        <td>THB {{ prices['meeting']['half-day']*.5*3 | number:0 }}</td>
+        <td class="yellow">THB {{ prices['meeting']['full-day']*.5 | number:0 }}</td>
+        <td>THB {{ prices['meeting']['full-day']*.5*3 | number:0 }}</td>
       </tr>
       </tbody>
     </table>
 
     <div class="row">
       <div class="span12">
-        <p class="footnote">These prices are valid until July 31th, 2013</p>
+        <p class="footnote">1. All prices shown are in Thai Baht.</p>
+        <p class="footnote">2. These prices are valid until July 31th, 2013.</p>
       </div>
     </div>
   </div>
