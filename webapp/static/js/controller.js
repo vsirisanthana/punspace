@@ -68,11 +68,11 @@ function AppCtrl($scope) {
     });
     $scope.marker = new google.maps.Marker({
         position: $scope.latLng,
-        title: 'Pun Space',
+        title: 'Punspace',
         icon: '/static/images/map_marker.png'
     });
     $scope.infoWindow = new google.maps.InfoWindow({
-        content: '<p class="black">Pun Space</p>'
+        content: '<p class="black">Punspace</p>'
     });
     $scope.activeInfoWindow = $scope.infoWindow;
 

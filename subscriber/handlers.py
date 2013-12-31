@@ -27,8 +27,8 @@ class SubscriberListOrCreateHandler(ListOrCreateHandler):
 
         # Send email
         sender_address = 'Pique Sirisanthana <pique@punspace.com>'
-        subject = 'Thank You for Subscribing to Pun Space'
-        body = """Thank you for subscribing to Pun Space. We'll get in touch with you very soon."""
+        subject = 'Thank You for Subscribing to Punspace'
+        body = """Thank you for subscribing to Punspace. We'll get in touch with you very soon."""
         mail.send_mail(sender_address, email, subject, body)
 
         return subscriber

@@ -62,7 +62,7 @@ class BaseTestHandler(unittest2.TestCase):
     def assertEqualMessageSubscribe(self, message):
         self.assertEqual(message.to, 'adele@punspace.com')
         self.assertEqual(message.sender, 'Pique Sirisanthana <pique@punspace.com>')
-        self.assertEqual(message.subject, 'Thank You for Subscribing to Pun Space')
+        self.assertEqual(message.subject, 'Thank You for Subscribing to Punspace')
 
 
 class TestSubscriberListHandler(BaseTestHandler):
